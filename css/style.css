@@ -1,0 +1,246 @@
+body {
+background:url("../img/bg.jpg") no-repeat -300px 250px;
+background-color: #FFF;
+margin:0px;
+}
+.header {
+	background-color:#333;
+	margin-bottom:20px;
+	width:100%;
+	height:150px;
+	border-bottom: 10px solid #C1930B;
+	position:relative;
+	z-index:0;
+}
+
+.b3logo  {
+	background:url("../img/b3_logo.png") no-repeat scroll left top transparent;
+	height:150px;
+	left:0;
+	position:absolute;
+	top:0px;
+	width:350px;
+	z-index:1;
+}
+
+.header_right  {
+	background:url("../img/header_right.png") no-repeat scroll left top transparent;
+	height:150px;
+	right:0;
+	position:absolute;
+	top:0px;
+	width:350px;
+	z-index:1;
+}
+
+.header_text {
+	font-family: Trebuchet MS;
+	font-size:200%;
+	font-weight:bold;
+	color:#FFF;
+	position:absolute;
+	text-align:center;
+	width:100%;
+	top:50px;
+	z-index:2;
+}
+
+.header_note {
+	font-family: Trebuchet MS;
+	font-size:75%;
+	font-weight:bold;
+	color:#FFF;
+	position:absolute;
+	text-align:center;
+	width:100%;
+	top:90px;
+	z-index:2;
+}
+
+.version {
+	font-family: Trebuchet MS;
+	font-size:75%;
+	font-weight:bold;
+	color:#FFF;
+	position:absolute;
+	right:20px;
+	text-align:right;
+	top:130px;
+	z-index:2;
+}
+
+.footer {
+	background:#666;
+	margin-top:20px;
+	width:100%;
+	height:40px;
+	border-top: 4px solid #C1930B;
+	position:relative;
+}
+
+.footer_text {
+	font-family:Verdana;
+	font-size:8pt;
+	color:#FFF;
+	padding:10px;
+}
+
+.footer_text a {
+	font-family:Verdana;
+	color:#FFF;
+	text-decoration:none;
+}
+
+.footer_text a:hover {
+	text-decoration:underline;
+}
+
+.copyright {
+	font-family:Verdana;
+	color:#FFF;
+	position:absolute;
+	right:15px;
+}
+
+#b3 input {
+	padding: 5px;
+	border: solid 1px #E5E5E5;
+	height: 15px;
+	font-size: 10pt;
+	font-family: Trebuchet MS;
+	color:#333;
+	background: #FFFFFF;
+}
+
+#b3 input:focus {
+	background: #F8F8F8;
+	}
+
+#b3 button{
+	margin-left:10px;
+	width:120px;
+	height:30px;
+	text-align:center;
+	line-height:10px;
+	color:#333;
+	font-size:11px;
+	font-weight:bold;
+}
+
+#b3 .checkbox-1 {
+	border: none;
+	background:#c8cfd5;
+}
+
+#b3 .checkbox_text {
+	display: table-cell; 
+	width:150px; 
+	background:#c8cfd5;
+	padding:1px;
+	font-size:10pt;
+}
+
+#b3 label {
+	font-family: Trebuchet MS;
+	font-size: 10pt;
+	font-weight:bold;
+	color:#555;
+	display:inline-block;
+	width:150px;
+	padding:5px;
+	margin:1px;
+	background: #c8cfd5;
+}
+
+#b3 select {
+	font-family: Trebuchet MS;
+	color: #333;
+	border: 1px solid #CFCFCF;
+}
+
+#b3 .checkbox-1 {
+	border: none;
+}
+
+#b3conf {
+	font-family: Trebuchet MS;
+	font-size: 10pt;
+}
+
+#b3conf fieldset {
+	font-size:12pt;
+	border:1px solid #CFCFCF;
+	margin-bottom:15px;
+}
+
+#b3conf #settings {
+	background:url("../img/settings.png") no-repeat right bottom;
+}
+
+#b3conf #database {
+	background:url("../img/database.png") no-repeat right bottom;
+}
+
+#b3conf #bfbc2 {
+	background:url("../img/bfbc2.png") no-repeat right bottom;
+}
+
+#b3conf #gameserver {
+	background:url("../img/gameserver.png") no-repeat right bottom;
+}
+
+#b3conf #autodocimg {
+	background:url("../img/autodoc.png") no-repeat right bottom;
+}
+
+#b3conf #messages {
+	background:url("../img/messages.png") no-repeat right bottom;
+}
+
+#b3conf #builtinplugins {
+	background:url("../img/builtinplugins.png") no-repeat right bottom;
+}
+
+#b3conf #externalplugins {
+	background:url("../img/externalplugins.png") no-repeat right bottom;
+}
+
+#b3conf legend {
+	font-weight:bold;
+}
+
+#b3conf dl dt {
+	padding:5px;
+	margin:-15px 0px 5px 10px;
+	font-size:8pt;
+}
+#b3 .hide
+{
+	display:none;
+}
+.text{
+	position:relative;
+	z-index:10;
+}
+.shadow{
+	color: #000;
+	position:absolute;
+	z-index:5;
+	margin:3px 0px 0px 3px;
+}
+/* simple css-based tooltip */
+.tooltip {
+	background:url('../img/info.png') no-repeat 0px 3px;
+	background-color:#73818c;
+	border-left:8px solid #616a71;
+	border-top:1px solid #616a71;
+	border-right:1px solid #616a71;
+	border-bottom:1px solid #616a71;
+	padding:6px 28px;
+	width:200px;
+	display:none;
+	color:#fff;
+	text-align:left;
+	font-family: Helvetica;
+	font-size:8pt;
+}
