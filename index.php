@@ -414,7 +414,7 @@ $(document).ready(function(){
         <legend>Built-in Plugins:</legend>
           <dl>
             <dt>
-              Choose built-in blugins you want to use and enter their paths.<br />
+              Choose built-in plugins you want to use and enter their paths.<br />
               <span style="margin-top:10px; display:inline-block; border:1px dotted #CCC; width:400px; padding:5px;">
               @conf : the folder containing this config file<br />
               </span>
