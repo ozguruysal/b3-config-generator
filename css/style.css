@@ -110,11 +110,13 @@ margin:0px;
 	font-family: Trebuchet MS;
 	color:#333;
 	background: #FFFFFF;
+	margin:1px;
 }
 
 #b3 input:focus {
-	background: #F8F8F8;
-	}
+	background: #fef9ec;
+	border: solid 1px #c9a744; /*#C1930B;*/
+}
 
 #b3 button{
 	margin-left:10px;
@@ -133,7 +135,7 @@ margin:0px;
 }
 
 #b3 .checkbox_text {
-	display: table-cell; 
+	display: inline-block; 
 	width:150px; 
 	background:#c8cfd5;
 	padding:1px;

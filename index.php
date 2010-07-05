@@ -122,10 +122,7 @@ $(document).ready(function(){
 <body>
 <div class="header">
   <div class="b3logo"></div>
-  <div class="header_text">
-    <span class="shadow">BigBrotherBot Config File Generator</span>
-	<span class="text">BigBrotherBot Config File Generator</span>
-  </div>
+  <div class="header_text">BigBrotherBot Config File Generator</div>
   <div class="header_note">For B3 Version 1.3 or higher</div>
   <div class="header_right"></div>
 </div>
