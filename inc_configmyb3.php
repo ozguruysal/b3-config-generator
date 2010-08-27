@@ -134,7 +134,7 @@ function generate_b3config_xml()
                                           "rcon_ip" => $rcon_ip,
                                           "rcon_port" => $rcon_port,                       //bfbc2
                                           "timeout" => $timeout,                           //bfbc2
-                                          "punkbuster" => $punkbuster
+                                          "punkbuster" => $pb
                                         ),
                           "autodoc"   => array (
                                           "type" => $type, 

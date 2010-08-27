@@ -264,7 +264,7 @@ $(document).ready(function(){
 				</span><br />
               </div>
 			    <label>Punkbuster:</label>
-				<select style="width:207px;" name="punkbuster" id="punkbuster" title="Select on if you use Punkbuster, otherwise select off."><option value="0">----- Select Your PB Status -----</option><?php select_pbsettings(); ?></select>
+				<select style="width:207px;" name="pb" id="pb" title="Select on if you use Punkbuster, otherwise select off."><option value="0">----- Select Your PB Status -----</option><?php select_pbsettings(); ?></select>
 			  </span><br />
 			  <div class="hide" id="hide7">
               <span>
