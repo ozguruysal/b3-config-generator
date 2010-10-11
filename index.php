@@ -1,8 +1,8 @@
 <?php
 /**
 *BigBrotherBot Config File Generator
-*Version: 1.0
-*Date: 05.07.2010
+*Version: 1.1
+*Date: 12.10.2010
 *Author: Freelander
 *Author URI: http://www.fps-gamer.net
 
@@ -90,7 +90,7 @@ $(document).ready(function(){
 	});
 
 	$("#parser").change(function(){
-		if ($(this).val() == "bfbc2" ) {
+		if ($(this).val() == "bfbc2" || $(this).val() == "moh") {
 			$("#hide5").slideDown("fast"); //Slide Down Effect
 		} else {
 			$("#hide5").slideUp("fast");	//Slide Up Effect
@@ -98,12 +98,18 @@ $(document).ready(function(){
 	});
 
 	$("#parser").change(function(){
-		if ($(this).val() == "bfbc2" ) {
+		if ($(this).val() == "bfbc2" || $(this).val() == "moh") {
 			$("#hide6").slideDown("fast"); //Slide Down Effect
 			$("#hide7").slideUp("fast");	//Slide Up Effect
+			$("#hide8").slideUp("fast");	//Slide Up Effect
+			$("#hide9").slideUp("fast");	//Slide Up Effect
+			$("#hide10").slideUp("fast");	//Slide Up Effect
 		} else {
 			$("#hide6").slideUp("fast");	//Slide Up Effect
 			$("#hide7").slideDown("fast"); //Slide Down Effect
+			$("#hide8").slideDown("fast"); //Slide Down Effect
+			$("#hide9").slideDown("fast"); //Slide Down Effect
+			$("#hide10").slideDown("fast"); //Slide Down Effect
 		}
 	});
 });
@@ -214,9 +220,9 @@ $(document).ready(function(){
     <td>
     <div class="hide" id="hide5">
       <fieldset id="bfbc2">
-        <legend>BFBC2 Specific Settings:</legend>
+        <legend>BFBC2/MOH Specific Settings:</legend>
           <dl>
-            <dt>Configure BFBC2 specific settings</dt>
+            <dt>Configure BFBC2/MOH specific settings</dt>
 	          <dd>
                 <span>
 			      <label>Max Say Line Length:</label>
@@ -436,16 +442,20 @@ $(document).ready(function(){
 				<input type="checkbox" style="display:none;" checked="checked" name="admin" id="admin" title="You cannot disable this plugin"></span>
 				<input type="text" size="40" name="admin_location" id="admin_location" value="@conf/plugin_admin.xml" title="Enter path to plugin config file">
 			  </span><br />
+			  <div class="hide" id="hide8">
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="tk" id="tk" title="Click to disable/enable this plugin"> Team Kill</span>
 				<input type="text" size="40" name="tk_location" id="tk_location" value="@conf/plugin_tk.xml" title="Enter path to plugin config file">
 			  </span><br />
+			  </div>
+			  <div class="hide" id="hide9">
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="stats" id="stats" title="Click to disable/enable this plugin"> Stats</span>
 				<input type="text" size="40" name="stats_location" id="stats_location" value="@conf/plugin_stats.xml" title="Enter path to plugin config file">
 			  </span><br />
+			  </div>
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="pingwatch" id="pingwatch" title="Click to disable/enable this plugin"> Ping Watch</span>
@@ -466,11 +476,13 @@ $(document).ready(function(){
 				<input type="checkbox" class="checkbox-1" checked="checked" name="welcome" id="welcome" title="Click to disable/enable this plugin"> Welcome</span>
 				<input type="text" size="40" name="welcome_location" id="welcome_location" value="@conf/plugin_welcome.xml" title="Enter path to plugin config file">
 			  </span><br />
+			  <div class="hide" id="hide10">
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="punkbuster" id="punkbuster" title="Click to disable/enable this plugin"> Punkbuster</span>
 				<input type="text" size="40" name="punkbuster_location" id="punkbuster_location" value="@conf/plugin_punkbuster.xml" title="Enter path to plugin config file">
 			  </span><br />
+			  </div>
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" name="xlrstats" id="xlrstats" title="Click to disable/enable this plugin<br /> 

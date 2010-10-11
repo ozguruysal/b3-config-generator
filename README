@@ -19,6 +19,11 @@ http://www.bigbrotherbot.net/forums or my e-mail above.
 
 == Changelog ==
 
-= 1.0 =
+== 1.1 (12.10.2010) ==
+
+* Added Medal of Honor
+* Automatically disables untested plugins (tk, stats and punkbuster) for bfbc2 and moh
+
+= 1.0 (05.07.2010) =
 
 * First release

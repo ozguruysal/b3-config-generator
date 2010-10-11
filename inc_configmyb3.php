@@ -1,8 +1,8 @@
 <?php
 /**
 *BigBrotherBot Config File Generator
-*Version: 1.0
-*Date: 05.07.2010
+*Version: 1.1
+*Date: 12.10.2010
 *Author: Freelander
 *Author URI: http://www.fps-gamer.net
 
@@ -36,7 +36,8 @@ function select_your_game()
                      "etpro"   => "Wolfenstein Enemy Territory", 
                      "wop"     => "World of Padman", 
                      "smg11"   => "Smokin' Guns", 
-                     "bfbc2"   => "Battle Field Bad Company 2"
+                     "bfbc2"   => "Battlefield Bad Company 2",
+                     "moh"     => "Medal of Honor"
                    );
   
   foreach ($parsers as $parser => $gamename)
@@ -126,14 +127,17 @@ function generate_b3config_xml()
                           "bfbc2"     => array(
                                           "max_say_line_length" => $max_say_line_length    //bfbc2
                                         ),
+                          "moh"       => array(
+                                          "max_say_line_length" => $max_say_line_length    //moh
+                                        ),
                           "server"    => array (
                                           "rcon_password" => $rcon_password,
                                           "port" => $port,
-                                          "game_log" => $game_log,                         //no bfbc2
+                                          "game_log" => $game_log,                         //no bfbc2 or moh
                                           "public_ip" => $public_ip,
                                           "rcon_ip" => $rcon_ip,
-                                          "rcon_port" => $rcon_port,                       //bfbc2
-                                          "timeout" => $timeout,                           //bfbc2
+                                          "rcon_port" => $rcon_port,                       //bfbc2, moh
+                                          "timeout" => $timeout,                           //bfbc2, moh
                                           "punkbuster" => $pb
                                         ),
                           "autodoc"   => array (
@@ -169,11 +173,12 @@ function generate_b3config_xml()
                                         )
                         );
 
-  //destroy bfbc2 specific variables
-  if($parser != 'bfbc2')
+  //destroy bfbc2 and moh specific variables
+  if($parser != 'bfbc2' && $parser != 'moh')
   {
     unset(
           $b3_xml_input['bfbc2'],
+          $b3_xml_input['moh'],
           $b3_xml_input['server']['rcon_port'],
           $b3_xml_input['server']['timeout']
          );
@@ -182,9 +187,27 @@ function generate_b3config_xml()
   //destroy non bfbc2 variables
   if($parser == 'bfbc2')
   {
-    unset($b3_xml_input['server']['game_log']);
+    unset(
+          $b3_xml_input['server']['game_log'],
+          $b3_xml_input['moh'],
+          $b3_xml_input['plugins_s']['tk'],
+          $b3_xml_input['plugins_s']['stats'],
+          $b3_xml_input['plugins_s']['punkbuster']
+         );
   }
 
+  //destroy non moh variables
+  if($parser == 'moh')
+  {
+    unset(
+          $b3_xml_input['server']['game_log'],
+          $b3_xml_input['bfbc2'],
+          $b3_xml_input['plugins_s']['tk'],
+          $b3_xml_input['plugins_s']['stats'],
+          $b3_xml_input['plugins_s']['punkbuster']
+         );
+  }
+  
   //Prepare the XML document
   $doc = new DOMDocument();
   $doc->formatOutput = true;

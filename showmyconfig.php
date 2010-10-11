@@ -1,8 +1,8 @@
 <?php
 /**
 *BigBrotherBot Config File Generator
-*Version: 1.0
-*Date: 05.07.2010
+*Version: 1.1
+*Date: 12.10.2010
 *Author: Freelander
 *Author URI: http://www.fps-gamer.net
 
