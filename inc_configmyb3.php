@@ -22,7 +22,7 @@
 *Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-$version = '1.0';
+$version = '1.1';
 
 function select_your_game()
 {
