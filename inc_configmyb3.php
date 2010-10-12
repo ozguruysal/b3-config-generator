@@ -28,16 +28,18 @@ function select_your_game()
 {
   //list of available parsers
   $parsers = array ( 
-                     "cod"     => "Call of Duty", 
+                     "bfbc2"   => "Battlefield Bad Company 2",
+                     "cod"     => "Call of Duty",
                      "cod2"    => "Call of Duty 2",
                      "cod4"    => "Call of Duty 4",
-                     "cod5"    => "Call of Duty: World at War", 
+                     "cod5"    => "Call of Duty: World at War",
+                     "cod6"    => "Call of Duty: Modern Warfare 2",
+                     "moh"     => "Medal of Honor",
+                     "oa081"   => "Open Arena",
+                     "smg11"   => "Smokin' Guns",
                      "iourt41" => "Urban Terror", 
                      "etpro"   => "Wolfenstein Enemy Territory", 
-                     "wop"     => "World of Padman", 
-                     "smg11"   => "Smokin' Guns", 
-                     "bfbc2"   => "Battlefield Bad Company 2",
-                     "moh"     => "Medal of Honor"
+                     "wop"     => "World of Padman"
                    );
   
   foreach ($parsers as $parser => $gamename)
