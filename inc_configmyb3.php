@@ -96,21 +96,21 @@ function generate_b3config_xml()
     $game_log = $game_log_local;
   }
   elseif ($game_log == 'ftp')
-    {
-      $game_log_ftpadr = explode("//", $game_log_ftpadr);
-      $game_log = $game_log_ftpadr[0].'//'.$game_log_ftpusr.':'.$game_log_ftppas.'@'.$game_log_ftpadr[1];
-    } 
+  {
+    $game_log_ftpadr = explode("//", $game_log_ftpadr);
+    $game_log = $game_log_ftpadr[0].'//'.$game_log_ftpusr.':'.$game_log_ftppas.'@'.$game_log_ftpadr[1];
+  } 
 
   //what is our autodoc file location?
   if($autodoc == 'locala')
   {
-    $autodoc = $autodoc_local;
+    $destination = $autodoc_local;
   }
   elseif ($autodoc == 'ftpa')
-    {
-      $autodoc_ftpadr = explode("//", $autodoc_ftpadr);
-      $destination = $autodoc_ftpadr[0].'//'.$autodoc_ftpusr.':'.$autodoc_ftppas.'@'.$autodoc_ftpadr[1];
-    }
+  {
+    $autodoc_ftpadr = explode("//", $autodoc_ftpadr);
+    $destination = $autodoc_ftpadr[0].'//'.$autodoc_ftpusr.':'.$autodoc_ftppas.'@'.$autodoc_ftpadr[1];
+  }
 
   $database = 'mysql://'.$db_user.':'.$db_pass.'@'.$db_host.'/'.$db_name;
 
