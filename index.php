@@ -44,7 +44,7 @@ include('inc_configmyb3.php');
 <meta name="keywords" content="bigbrotherbot, b3, config, generator, server administration" />
 <link rel="canonical" href="http://www.bigbrotherbot.net/" />
 
-<!-- Tooltip functions start here -->
+<!-- Tooltip functions -->
 <script>
 $(function() {
 $("#b3 :input").tooltip({
@@ -61,6 +61,8 @@ $("#b3 :input").tooltip({
 	});
 });
 </script>
+
+<!-- Hide/Show form fields -->
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#game_log").change(function(){
@@ -106,7 +108,11 @@ $(document).ready(function(){
 			$("#hide10").slideUp("fast");	//Slide Up Effect
 		} else {
 			$("#hide6").slideUp("fast");	//Slide Up Effect
-			$("#hide7").slideDown("fast"); //Slide Down Effect
+			if ($(this).val() == "0") {
+				$("#hide7").slideUp("fast");	//Slide Up Effect
+			} else {
+				$("#hide7").slideDown("fast"); //Slide Down Effect
+			}
 			$("#hide8").slideDown("fast"); //Slide Down Effect
 			$("#hide9").slideDown("fast"); //Slide Down Effect
 			$("#hide10").slideDown("fast"); //Slide Down Effect
@@ -114,15 +120,6 @@ $(document).ready(function(){
 	});
 });
 </script>
-<!-- Tooltip functions end here -->
-
-<!-- Modal pop-up window function starts here -->
-
-
-<script type="text/javascript">
-
-</script>
-<!-- Modal pop-up window function ends here -->
 
 </head>
 <body>
