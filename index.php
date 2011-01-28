@@ -39,87 +39,11 @@ include('inc_configmyb3.php');
 <script src="js/jquery.tools.min.js" type="text/javascript"></script>
 <script src="js/jquery.simplemodal.js" type="text/javascript"></script>
 <script src="js/osx.js" type="text/javascript"></script>
+<script src="js/b3.js" type="text/javascript"></script>
 <link rel="shortcut icon" href="img/favicon.ico" />
 <meta name="description" content="BigBrotherBot - Web based b3.xml generator" />
 <meta name="keywords" content="bigbrotherbot, b3, config, generator, server administration" />
 <link rel="canonical" href="http://www.bigbrotherbot.net/" />
-
-<!-- Tooltip functions -->
-<script>
-$(function() {
-$("#b3 :input").tooltip({
-
-	// place tooltip on the right edge
-	position: "center right",
-
-	// a little tweaking of the position
-	offset: [-2, 20],
-
-	// custom opacity setting
-	opacity: 0.8
-
-	});
-});
-</script>
-
-<!-- Hide/Show form fields -->
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#game_log").change(function(){
-		if ($(this).val() == "local" ) {
-			$("#hide1").slideDown("fast"); //Slide Down Effect
-		} else {
-			$("#hide1").slideUp("fast");	//Slide Up Effect
-		}
-		if ($(this).val() == "ftp" ) {
-			$("#hide2").slideDown("fast"); //Slide Down Effect
-		} else {
-			$("#hide2").slideUp("fast");	//Slide Up Effect
-		}
-	});
-
-	$("#autodoc").change(function(){
-		if ($(this).val() == "locala" ) {
-			$("#hide3").slideDown("fast"); //Slide Down Effect
-		} else {
-			$("#hide3").slideUp("fast");	//Slide Up Effect
-		}
-		if ($(this).val() == "ftpa" ) {
-			$("#hide4").slideDown("fast"); //Slide Down Effect
-		} else {
-			$("#hide4").slideUp("fast");	//Slide Up Effect
-		}
-	});
-
-	$("#parser").change(function(){
-		if ($(this).val() == "bfbc2" || $(this).val() == "moh") {
-			$("#hide5").slideDown("fast"); //Slide Down Effect
-		} else {
-			$("#hide5").slideUp("fast");	//Slide Up Effect
-		}
-	});
-
-	$("#parser").change(function(){
-		if ($(this).val() == "bfbc2" || $(this).val() == "moh") {
-			$("#hide6").slideDown("fast"); //Slide Down Effect
-			$("#hide7").slideUp("fast");	//Slide Up Effect
-			$("#hide8").slideUp("fast");	//Slide Up Effect
-			$("#hide9").slideUp("fast");	//Slide Up Effect
-			$("#hide10").slideUp("fast");	//Slide Up Effect
-		} else {
-			$("#hide6").slideUp("fast");	//Slide Up Effect
-			if ($(this).val() == "0") {
-				$("#hide7").slideUp("fast");	//Slide Up Effect
-			} else {
-				$("#hide7").slideDown("fast"); //Slide Down Effect
-			}
-			$("#hide8").slideDown("fast"); //Slide Down Effect
-			$("#hide9").slideDown("fast"); //Slide Down Effect
-			$("#hide10").slideDown("fast"); //Slide Down Effect
-		}
-	});
-});
-</script>
 
 </head>
 <body>
@@ -241,29 +165,29 @@ $(document).ready(function(){
             <dd>
               <span>
 			    <label>Rcon Password:</label>
-				<input type="text" size="30" name="rcon_password" id="rcon_password" value="MYrCOnPaSS" title="Enter your rcon password.">
+				<input type="text" size="30" name="rcon_password" id="rcon_password" value="MYrCOnPaSS" title="Enter your rcon password." />
 			  </span><br />
               <span>
 			    <label>Server Port:</label>
-				<input type="text" size="30" name="port" id="port" value="28960" title="Enter your game server's port number.">
+				<input type="text" size="30" name="port" id="port" value="28960" title="Enter your game server's port number." />
 			  </span><br />
               <span>
 			    <label>Public IP:</label>
-			    <input type="text" size="30" name="public_ip" id="public_ip" value="255.255.255.255" title="Enter your game server's public IP.">
+			    <input type="text" size="30" name="public_ip" id="public_ip" value="255.255.255.255" title="Enter your game server's public IP." />
 			  </span><br />
               <span>
 			    <label>Rcon IP:</label>
-				<input type="text" size="30" name="rcon_ip" id="rcon_ip" value="127.0.0.1" title="Enter your game server's rcon IP.">
+				<input type="text" size="30" name="rcon_ip" id="rcon_ip" value="127.0.0.1" title="Enter your game server's rcon IP." />
 			  </span><br />
               <span>
               <div class="hide" id="hide6">
                 <span>
 				  <label>Rcon Port:</label>
-				  <input type="text" size="30" name="rcon_port" id="rcon_port" value="19567" title="Enter your game server's port number for rcon access.">
+				  <input type="text" size="30" name="rcon_port" id="rcon_port" value="19567" title="Enter your game server's port number for rcon access." />
 				</span><br />
                 <span>
 				  <label>Timeout:</label>
-				  <input type="text" size="30" name="timeout" id="timeout" value="3" title="Timeout.">
+				  <input type="text" size="30" name="timeout" id="timeout" value="3" title="Timeout." />
 				</span><br />
               </div>
 			    <label>Punkbuster:</label>
@@ -275,24 +199,31 @@ $(document).ready(function(){
 				<select style="width:207px;" name="game_log" id="game_log" title="Select your game log file location."><option value="0">----- Select Location -----</option><option value="local">Local File</option><option value="ftp">FTP Location</option></select>
 			  </span><br />
 			  </div>
+			  <!-- Blackops Only -->
+			  <div class="hide" id="hide11">
+              <span>
+			    <label>Game Log URL:</label>
+				<input type="text" size="60" name="game_log" id="game_log" title="Enter your game log URL" />
+			  </span><br />
+			  </div>
               <div class="hide" id="hide1">
                 <span>
 				  <label>Local Path:</label>
-				  <input type="text" size="30" name="game_log_local" id="game_log_local" value="/path/to/games_mp.log" title="Enter full path to your game log file.">
+				  <input type="text" size="30" name="game_log_local" id="game_log_local" value="/path/to/games_mp.log" title="Enter full path to your game log file." />
 				</span><br />
               </div>
               <div class="hide" id="hide2">
                 <span>
 				  <label>FTP Address:</label>
-				  <input type="text" size="50" name="game_log_ftpadr" id="game_log_ftpadr" value="ftp://ftp.example.com/games/games_mp.log" title="Enter FTP address of your game log file including 'ftp://' at the beginning.">
+				  <input type="text" size="50" name="game_log_ftpadr" id="game_log_ftpadr" value="ftp://ftp.example.com/games/games_mp.log" title="Enter FTP address of your game log file including 'ftp://' at the beginning." />
 				</span><br />
                 <span>
 				  <label>FTP User:</label>
-				  <input type="text" size="50" name="game_log_ftpusr" id="game_log_ftpusr" value="ftpuser" title="Enter your ftp user name">
+				  <input type="text" size="50" name="game_log_ftpusr" id="game_log_ftpusr" value="ftpuser" title="Enter your ftp user name" />
 				</span><br />
                 <span>
 				  <label>FTP Pass:</label>
-				  <input type="text" size="50" name="game_log_ftppas" id="game_log_ftppas" value="FtPpASSw0Rd" title="Enter your ftp password">
+				  <input type="text" size="50" name="game_log_ftppas" id="game_log_ftppas" value="FtPpASSw0Rd" title="Enter your ftp password" />
 				</span><br />
               </div>
             </dd>
@@ -313,7 +244,7 @@ $(document).ready(function(){
 			  </span><br />
               <span>
 			    <label>Max Level:</label>
-				<input type="text" size="30" name="maxlevel" id="maxlevel" value="100" title="If you want to exclude commands reserved for higher levels, you may enter a lower value here.">
+				<input type="text" size="30" name="maxlevel" id="maxlevel" value="100" title="If you want to exclude commands reserved for higher levels, you may enter a lower value here." />
 			  </span><br />
               <span>
 			    <label>Destination:</label>
@@ -322,21 +253,21 @@ $(document).ready(function(){
               <div class="hide" id="hide3">
                 <span>
 				  <label>Local Path:</label>
-				  <input type="text" size="30" name="autodoc_local" id="autodoc_local" value="/path/to/b3_doc.html" title="Enter the full path and file name.">
+				  <input type="text" size="30" name="autodoc_local" id="autodoc_local" value="/path/to/b3_doc.html" title="Enter the full path and file name." />
 				</span><br />
               </div>
               <div class="hide" id="hide4">
                 <span>
 				  <label>FTP Address:</label>
-				  <input type="text" size="50" name="autodoc_ftpadr" id="autodoc_ftpadr" value="ftp://ftp.example.com/games/b3_doc.html" title="Enter the FTP address for your B3 command documentation file.">
+				  <input type="text" size="50" name="autodoc_ftpadr" id="autodoc_ftpadr" value="ftp://ftp.example.com/games/b3_doc.html" title="Enter the FTP address for your B3 command documentation file." />
 				</span><br />
                 <span>
 				  <label>FTP User:</label>
-				  <input type="text" size="50" name="autodoc_ftpusr" id="autodoc_ftpusr" value="ftpuser" title="Enter your ftp user name">
+				  <input type="text" size="50" name="autodoc_ftpusr" id="autodoc_ftpusr" value="ftpuser" title="Enter your ftp user name" />
 				</span><br />
                 <span>
 				  <label>FTP Pass:</label>
-				  <input type="text" size="50" name="autodoc_ftppas" id="autodoc_ftppas" value="FtPpASSw0Rd" title="Enter your ftp password">
+				  <input type="text" size="50" name="autodoc_ftppas" id="autodoc_ftppas" value="FtPpASSw0Rd" title="Enter your ftp password" />
 				</span><br />
               </div>
             </dd>
@@ -353,35 +284,35 @@ $(document).ready(function(){
             <dd>
               <span>
 			    <label>Kicked By:</label>
-				<input type="text" size="45" name="kicked_by" id="kicked_by" value="%s^7 was kicked by %s^7 %s" title="Enter the message that will be displayed when a player is kicked by a mod/admin.">
+				<input type="text" size="60" name="kicked_by" id="kicked_by" value="$clientname^7 was kicked by $adminname^7 $reason" title="Enter the message that will be displayed when a player is kicked by a mod/admin." />
 		      </span><br />
               <span>
 			    <label>Kicked:</label>
-				<input type="text" size="45" name="kicked" id="kicked" value="%s^7 was kicked %s" title="Enter the message that will be displayed when a player is kicked by B3.">
+				<input type="text" size="60" name="kicked" id="kicked" value="$clientname^7 was kicked $reason" title="Enter the message that will be displayed when a player is kicked by B3." />
 			  </span><br />
               <span>
 			    <label>Banned By:</label>
-				<input type="text" size="45" name="banned_by" id="banned_by" value="%s^7 was banned by %s^7 %s" title="Enter the message that will be displayed when a player is banned by a mod/admin.">
+				<input type="text" size="60" name="banned_by" id="banned_by" value="$clientname^7 was banned by $adminname^7 $reason" title="Enter the message that will be displayed when a player is banned by a mod/admin." />
 			  </span><br />
               <span>
 			    <label>Banned:</label>
-				<input type="text" size="45" name="banned" id="banned" value="%s^7 was banned %s" title="Enter the message that will be displayed when a player is kicked by a B3.">
+				<input type="text" size="60" name="banned" id="banned" value="$clientname^7 was banned $reason" title="Enter the message that will be displayed when a player is kicked by a B3." />
 			  </span><br />
               <span>
 			    <label>Temp Banned By:</label>
-				<input type="text" size="45" name="temp_banned_by" id="temp_banned_by" value="%s^7 was temp banned by %s^7 for %s^7 %s" title="Enter the message that will be displayed when a player is temp banned by a mod/admin.">
+				<input type="text" size="60" name="temp_banned_by" id="temp_banned_by" value="$clientname^7 was temp banned by $adminname^7 for $banduration^7 $reason" title="Enter the message that will be displayed when a player is temp banned by a mod/admin." />
 			  </span><br />
               <span>
 			    <label>Temp Banned:</label>
-				<input type="text" size="45" name="temp_banned" id="temp_banned" value="%s^7 was temp banned for %s^7 %s" title="Enter the message that will be displayed when a player is temp banned by B3.">
+				<input type="text" size="60" name="temp_banned" id="temp_banned" value="$clientname^7 was temp banned for $banduration^7 $reason" title="Enter the message that will be displayed when a player is temp banned by B3." />
 			  </span><br />
               <span>
 			    <label>Unbanned By:</label>
-				<input type="text" size="45" name="unbanned_by" id="unbanned_by" value="%s^7 was un-banned by %s^7 %s" title="Enter the message that will be displayed when a player is unbanned by a mod/admin.">
+				<input type="text" size="60" name="unbanned_by" id="unbanned_by" value="$clientname^7 was un-banned by $adminname^7 $reason" title="Enter the message that will be displayed when a player is unbanned by a mod/admin." />
 			  </span><br />
               <span>
 			    <label>Unbanned:</label>
-				<input type="text" size="45" name="unbanned" id="unbanned" value="%s^7 was un-banned %s" title="Enter the message that will be displayed when a player is kicked by B3.">
+				<input type="text" size="60" name="unbanned" id="unbanned" value="$clientname^7 was un-banned $reason" title="Enter the message that will be displayed when a player is kicked by B3." />
 			  </span><br />
             </dd>
           </dl>
@@ -403,7 +334,7 @@ $(document).ready(function(){
             <dd>
               <span>
 			    <label>External Directory:</label>
-				<input type="text" size="30" name="external_dir" id="external_dir" value="@b3/extplugins" title="Enter here the path to the config folder for your external plugins.">
+				<input type="text" size="30" name="external_dir" id="external_dir" value="@b3/extplugins" title="Enter here the path to the config folder for your external plugins." />
 			  </span><br />
             </dd>
           </dl>
@@ -426,58 +357,58 @@ $(document).ready(function(){
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="censor" id="censor" title="Click to disable/enable this plugin"> Censor</span>
-				<input type="text" size="40" name="censor_location" id="censor_location" value="@conf/plugin_censor.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="censor_location" id="censor_location" value="@conf/plugin_censor.xml" title="Enter path to plugin config file" />
 			  </span><br />
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="spamcontrol" id="spamcontrol" title="Click to disable/enable this plugin"> Spam Control</span>
-				<input type="text" size="40" name="spamcontrol_location" id="spamcontrol_location" value="@conf/plugin_spamcontrol.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="spamcontrol_location" id="spamcontrol_location" value="@conf/plugin_spamcontrol.xml" title="Enter path to plugin config file" />
 			  </span><br />
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="admin_fake" id="admin_fake" title="You cannot disable this plugin" disabled> Admin</span>
 				<input type="checkbox" style="display:none;" checked="checked" name="admin" id="admin" title="You cannot disable this plugin"></span>
-				<input type="text" size="40" name="admin_location" id="admin_location" value="@conf/plugin_admin.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="admin_location" id="admin_location" value="@conf/plugin_admin.xml" title="Enter path to plugin config file" />
 			  </span><br />
 			  <div class="hide" id="hide8">
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="tk" id="tk" title="Click to disable/enable this plugin"> Team Kill</span>
-				<input type="text" size="40" name="tk_location" id="tk_location" value="@conf/plugin_tk.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="tk_location" id="tk_location" value="@conf/plugin_tk.xml" title="Enter path to plugin config file" />
 			  </span><br />
 			  </div>
 			  <div class="hide" id="hide9">
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="stats" id="stats" title="Click to disable/enable this plugin"> Stats</span>
-				<input type="text" size="40" name="stats_location" id="stats_location" value="@conf/plugin_stats.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="stats_location" id="stats_location" value="@conf/plugin_stats.xml" title="Enter path to plugin config file" />
 			  </span><br />
 			  </div>
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="pingwatch" id="pingwatch" title="Click to disable/enable this plugin"> Ping Watch</span>
-				<input type="text" size="40" name="pingwatch_location" id="pingwatch_location" value="@conf/plugin_pingwatch.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="pingwatch_location" id="pingwatch_location" value="@conf/plugin_pingwatch.xml" title="Enter path to plugin config file" />
 			  </span><br />
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="adv" id="adv" title="Click to disable/enable this plugin"> Advertise</span>
-				<input type="text" size="40" name="adv_location" id="adv_location" value="@conf/plugin_adv.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="adv_location" id="adv_location" value="@conf/plugin_adv.xml" title="Enter path to plugin config file" />
 			  </span><br />
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="status" id="status" title="Click to disable/enable this plugin"> Status</span>
-				<input type="text" size="40" name="status_location" id="status_location" value="@conf/plugin_status.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="status_location" id="status_location" value="@conf/plugin_status.xml" title="Enter path to plugin config file" />
 			  </span><br />
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="welcome" id="welcome" title="Click to disable/enable this plugin"> Welcome</span>
-				<input type="text" size="40" name="welcome_location" id="welcome_location" value="@conf/plugin_welcome.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="welcome_location" id="welcome_location" value="@conf/plugin_welcome.xml" title="Enter path to plugin config file" />
 			  </span><br />
 			  <div class="hide" id="hide10">
               <span>
 			    <span class="checkbox_text">
 				<input type="checkbox" class="checkbox-1" checked="checked" name="punkbuster" id="punkbuster" title="Click to disable/enable this plugin"> Punkbuster</span>
-				<input type="text" size="40" name="punkbuster_location" id="punkbuster_location" value="@conf/plugin_punkbuster.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="punkbuster_location" id="punkbuster_location" value="@conf/plugin_punkbuster.xml" title="Enter path to plugin config file" />
 			  </span><br />
 			  </div>
               <span>
@@ -487,7 +418,7 @@ $(document).ready(function(){
 					a look in the B3 forums (look for XLR Extensions) for more
 					information before enabling this. Extra database tables are
 					necessary."> XLRstats</span>
-				<input type="text" size="40" name="xlrstats_location" id="xlrstats_location" value="@b3/extplugins/conf/xlrstats.xml" title="Enter path to plugin config file">
+				<input type="text" size="40" name="xlrstats_location" id="xlrstats_location" value="@b3/extplugins/conf/xlrstats.xml" title="Enter path to plugin config file" />
 			  </span><br />
             </dd>
           </dl>

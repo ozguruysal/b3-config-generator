@@ -34,6 +34,7 @@ function select_your_game()
                      "cod4"    => "Call of Duty 4",
                      "cod5"    => "Call of Duty: World at War",
                      "cod6"    => "Call of Duty: Modern Warfare 2",
+                     "cod7"    => "Call of Duty: Black Ops",
                      "moh"     => "Medal of Honor",
                      "oa081"   => "Open Arena",
                      "smg11"   => "Smokin' Guns",
@@ -206,6 +207,15 @@ function generate_b3config_xml()
           $b3_xml_input['bfbc2'],
           $b3_xml_input['plugins_s']['tk'],
           $b3_xml_input['plugins_s']['stats'],
+          $b3_xml_input['plugins_s']['punkbuster']
+         );
+  }
+  
+  //destroy non cod7 variables
+  if($parser == 'cod7')
+  {
+    unset(
+          $b3_xml_input['plugins_s']['tk'],
           $b3_xml_input['plugins_s']['punkbuster']
          );
   }
