@@ -1,10 +1,10 @@
 body {
 background:url("../img/bg.jpg") no-repeat -300px 250px;
-background-color: #FFF;
+/*background-color: #FFF;*/
 margin:0px;
 }
 .header {
-	background-color:#333;
+	background-color:#222;
 	margin-bottom:20px;
 	width:100%;
 	height:150px;
@@ -34,7 +34,7 @@ margin:0px;
 }
 
 .header_text {
-	font-family: Trebuchet MS;
+	font-family: "Trebuchet MS";
 	font-size:200%;
 	font-weight:bold;
 	color:#FFF;
@@ -46,7 +46,7 @@ margin:0px;
 }
 
 .header_note {
-	font-family: Trebuchet MS;
+	font-family: "Trebuchet MS";
 	font-size:75%;
 	font-weight:bold;
 	color:#FFF;
@@ -58,7 +58,7 @@ margin:0px;
 }
 
 .version {
-	font-family: Trebuchet MS;
+	font-family: "Trebuchet MS";
 	font-size:75%;
 	font-weight:bold;
 	color:#FFF;
@@ -104,7 +104,13 @@ margin:0px;
 
 .validator_logo {
 	position:absolute;
-	right:15px;
+	left:15px;
+	bottom:55px;
+}
+
+.validator_logo_css {
+	position:absolute;
+	left:108px;
 	bottom:55px;
 }
 
@@ -113,9 +119,9 @@ margin:0px;
 	border: solid 1px #E5E5E5;
 	height: 15px;
 	font-size: 10pt;
-	font-family: Trebuchet MS;
+	font-family: "Trebuchet MS";
 	color:#333;
-	background: #FFFFFF;
+	/*background: #FFFFFF;*/
 	margin:1px;
 }
 
@@ -149,7 +155,7 @@ margin:0px;
 }
 
 #b3 label {
-	font-family: Trebuchet MS;
+	font-family: "Trebuchet MS";
 	font-size: 10pt;
 	font-weight:bold;
 	color:#555;
@@ -161,7 +167,7 @@ margin:0px;
 }
 
 #b3 select {
-	font-family: Trebuchet MS;
+	font-family: "Trebuchet MS";
 	color: #333;
 	border: 1px solid #CFCFCF;
 }
@@ -171,7 +177,7 @@ margin:0px;
 }
 
 #b3conf {
-	font-family: Trebuchet MS;
+	font-family: "Trebuchet MS";
 	font-size: 10pt;
 }
 
