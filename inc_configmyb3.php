@@ -22,7 +22,7 @@
 *Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-$version = '1.1';
+$version = '1.3';
 
 function select_your_game()
 {
@@ -44,7 +44,7 @@ function select_your_game()
                    );
   
   foreach ($parsers as $parser => $gamename)
-    echo "<option value=".$parser.">".$gamename."</option>\n";
+    echo '<option value="'.$parser.'">'.$gamename.'</option>' . "\n";
 }
 
 function select_log_level()
@@ -63,7 +63,7 @@ function select_log_level()
                       );
 
   foreach ($loglevels as $log => $logdesc)
-    echo "<option value=".$log.">".$logdesc."</option>\n";
+    echo '<option value="'.$log.'">'.$logdesc.'</option>' . "\n";
 }
 
 function select_pbsettings()
@@ -71,7 +71,7 @@ function select_pbsettings()
   $pbsettings = array ("on", "off");
 
   foreach ($pbsettings as $pb)
-    echo "<option value=".$pb.">".$pb."</option>\n";
+    echo '<option value="'.$pb.'">'.$pb.'</option>' . "\n";
 }
 
 function select_autodoc_type()
@@ -79,7 +79,7 @@ function select_autodoc_type()
   $autodoctypes = array ("html", "htmltable", "xml");
 
   foreach ($autodoctypes as $autodoctype)
-    echo "<option value=".$autodoctype.">".$autodoctype."</option>\n";
+    echo '<option value="'.$autodoctype.'">'.$autodoctype.'</option>' . "\n";
 }
 
 function generate_b3config_xml()

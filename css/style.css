@@ -102,6 +102,12 @@ margin:0px;
 	right:15px;
 }
 
+.validator_logo {
+	position:absolute;
+	right:15px;
+	bottom:55px;
+}
+
 #b3 input {
 	padding: 5px;
 	border: solid 1px #E5E5E5;
