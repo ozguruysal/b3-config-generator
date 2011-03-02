@@ -437,7 +437,7 @@ include('inc_configmyb3.php');
   <div class="footer_text">
     <span id="osx-modal"><a href="#" class="osx">Privacy Statement</a></span>&nbsp;|
     <a href="http://www.bigbrotherbot.net">BigBrotherBot</a>
-	<span class="copyright">Copyright &copy; <a href="http://www.fps-gamer.net">Freelander</a> 2010 - Version <?php echo $version; ?></span>
+	<span class="copyright">Copyright &copy; <a href="http://www.fps-gamer.net">Freelander</a> 2011 - Version <?php echo $version; ?></span>
   </div>
     <span class="validator_logo">
       <a href="http://validator.w3.org/check?uri=referer">
