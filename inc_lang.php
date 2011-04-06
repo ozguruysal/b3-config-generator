@@ -30,9 +30,9 @@ $client_ip = $_SERVER['REMOTE_ADDR'];
 $gi = geoip_open('lib/geoip/GeoIP.dat', GEOIP_STANDARD);
 if(geoip_country_code_by_addr($gi, $client_ip) != '')
 {
-  if (file_exists('lang/'.$browser_lang.'.php'))
-    $language = strtolower(geoip_country_code_by_addr($gi, $client_ip));
-    $language = checklangreplacement($language);
+  $country_code = strtolower(geoip_country_code_by_addr($gi, $client_ip));
+  if (file_exists('lang/'.$country_code.'.php'))
+    $language = checklangreplacement($country_code);
 }
 else
 {
