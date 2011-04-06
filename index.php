@@ -1,28 +1,27 @@
 <?php
 /**
-*BigBrotherBot Config File Generator
-*Version: 1.1
-*Date: 12.10.2010
-*Author: Freelander
-*Author URI: http://www.fps-gamer.net
-
-*Copyright(c)2010  Freelander  <mailto:freelander@fps-gamer.net>
-
-*This program is free software; you can redistribute it and/or modify
-*it under the terms of the GNU General Public License, version 2, as 
-*published by the Free Software Foundation.
-
-*This program is distributed in the hope that it will be useful,
-*but WITHOUT ANY WARRANTY; without even the implied warranty of
-*MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*GNU General Public License for more details.
-
-*You should have received a copy of the GNU General Public License
-*along with this program; if not, write to the Free Software
-*Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
+ * BigBrotherBot Config File Generator
+ * Author: Freelander
+ * Author URI: http://www.fps-gamer.net
+ *
+ * Copyright(c)2010  Freelander  <mailto:freelander@fps-gamer.net>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 2, as 
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
 
 include('inc_configmyb3.php');
+include('inc_lang.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -31,7 +30,7 @@ include('inc_configmyb3.php');
 
 <head>
 
-<title>BigBrotherBot Config Generator Version 1.0</title>
+<title><?php echo $LANG['TITLE']; ?></title>
 
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -49,8 +48,8 @@ include('inc_configmyb3.php');
 <body>
 <div class="header">
   <div class="b3logo"></div>
-  <div class="header_text">BigBrotherBot Config File Generator</div>
-  <div class="header_note">For B3 Version 1.3 or higher</div>
+  <div class="header_text"><?php echo $LANG['TITLE']; ?></div>
+  <div class="header_note"><?php echo $LANG['SLOGAN']; ?></div>
   <div class="header_right"></div>
 </div>
 <form id="b3" method="post" action="showmyconfig.php">
@@ -62,45 +61,37 @@ include('inc_configmyb3.php');
   <tr>
     <td>
       <fieldset id="settings">
-        <legend>General Settings:</legend>
+        <legend><?php echo $LANG['GENERAL_SETTINGS']; ?></legend>
           <dl>
-            <dt>Fill in your general information</dt>
+            <dt><?php echo $LANG['GENERAL_SETTINGS_TIP']; ?></dt>
             <dd>
               <span>
-			    <label>Game:</label>
-				<select class="select-1" name="parser" id="parser" title="Select your game."><option value="0">----- Select Your Game -----</option><?php select_your_game(); ?></select>
+			    <label><?php echo $LANG['GAME']; ?></label>
+				<select class="select-1" name="parser" id="parser" title="<?php echo $LANG['GAME_TIP']; ?>"><option value="0">----- <?php echo $LANG['SELECT_YOUR_GAME']; ?> -----</option><?php select_your_game(); ?></select>
 			  </span><br />
               <span>
-			    <label>Bot Name:</label>
-				<input type="text" size="28" name="bot_name" id="bot_name" value="B3" title="You may enter a different bot name if you like or leave it as is." />
+			    <label><?php echo $LANG['BOT_NAME']; ?></label>
+				<input type="text" size="28" name="bot_name" id="bot_name" value="B3" title="<?php echo $LANG['BOT_NAME_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Bot Prefix:</label>
-				<input type="text" size="28" name="bot_prefix" id="bot_prefix" value="^0(^2b3^0)^7:" title="Ingame messages are prefixed with this code, you can use colorcodes. 
-				  ^1:Red,
-				  ^2:Green, 
-				  ^3:Yellow, 
-				  ^4:Blue, 
-				  ^5:Cyan, 
-				  ^6:Pink/Magenta, 
-				  ^7:White, 
-				  ^0:Black" />
+			    <label><?php echo $LANG['BOT_PREFIX']; ?></label>
+				<input type="text" size="28" name="bot_prefix" id="bot_prefix" value="^0(^2b3^0)^7:" title="<?php echo $LANG['BOT_PREFIX_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Time Format:</label>
-				<input type="text" size="28" name="time_format" id="time_format" value="%I:%M%p %Z %m/%d/%y" title="You can arrange the time format as specified in python's time directives." />
+			    <label><?php echo $LANG['TIME_FORMAT']; ?></label>
+				<input type="text" size="28" name="time_format" id="time_format" value="%I:%M%p %Z %m/%d/%y" title="<?php echo $LANG['TIME_FORMAT_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Time Zone:</label>
-				<input type="text" size="28" name="time_zone" id="time_zone" value="CST" title="Set your server's timezone so all timebased lookups will show the proper time" />
+			    <label><?php echo $LANG['TIME_ZONE']; ?></label>
+				<input type="text" size="28" name="time_zone" id="time_zone" value="CST" title="<?php echo $LANG['TIME_ZONE_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>B3 Log File:</label>
-				<input type="text" size="28" name="logfile" id="logfile" value="/path/to/b3.log" title="Type the location you want to store the log created by B3." />
+			    <label><?php echo $LANG['B3_LOG']; ?></label>
+				<input type="text" size="28" name="logfile" id="logfile" value="/path/to/b3.log" title="<?php echo $LANG['B3_LOG_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Log Level:</label>
-				<select style="width:194px;" name="log_level" id="log_level" title="The amount of logging you want in your b3.log file. Lower numbers log more information and contain all the messages with higher numbers after it."><option value="0">----- Select Log Level -----</option><?php select_log_level(); ?></select>
+			    <label><?php echo $LANG['LOG_LEVEL']; ?></label>
+				<select style="width:194px;" name="log_level" id="log_level" title="<?php echo $LANG['LOG_LEVEL_TIP']; ?>"><option value="0">----- <?php echo $LANG['SELECT_LOG_LEVEL']; ?> -----</option><?php select_log_level(); ?></select>
 			  </span><br />
             </dd>
           </dl>
@@ -110,25 +101,25 @@ include('inc_configmyb3.php');
   <tr>
     <td>
       <fieldset id="database">
-        <legend>Database Settings:</legend>
+        <legend><?php echo $LANG['DB_SETTINGS']; ?></legend>
           <dl>
-            <dt>Fill in your database connection information</dt>
+            <dt><?php echo $LANG['DB_SETTINGS_TIP']; ?></dt>
             <dd>
               <span>
-			    <label>Username:</label>
-				<input type="text" size="30" name="db_user" id="db_user" value="root" title="Enter your B3 database username." />
+			    <label><?php echo $LANG['USERNAME']; ?></label>
+				<input type="text" size="30" name="db_user" id="db_user" value="root" title="<?php echo $LANG['USERNAME_TIP'];?>" />
 			  </span><br />
               <span>
-			    <label>Password:</label>
-				<input type="text" size="30" name="db_pass" id="db_pass" value="mYPASswOrd" title="Enter your B3 database password." />
+			    <label><?php echo $LANG['PASSWORD'];?></label>
+				<input type="text" size="30" name="db_pass" id="db_pass" value="mYPASswOrd" title="<?php echo $LANG['PASSWORD_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Hostname/IP:</label>
-				<input type="text" size="30" name="db_host" id="db_host" value="localhost" title="Enter your database hostname or the IP number if your database is on a remote server. But make sure the database server accepts your connection from outside, this is a common mistake." />
+			    <label><?php echo $LANG['HOSTNAME']; ?></label>
+				<input type="text" size="30" name="db_host" id="db_host" value="localhost" title="<?php echo $LANG['HOSTNAME_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Database Name:</label>
-				<input type="text" size="30" name="db_name" id="db_name" value="b3_db" title="Enter your B3 database name." />
+			    <label><?php echo $LANG['DB_NAME']; ?></label>
+				<input type="text" size="30" name="db_name" id="db_name" value="b3_db" title="<?php echo $LANG['DB_NAME_TIP']; ?>" />
 			  </span><br />
             </dd>
           </dl>
@@ -140,13 +131,13 @@ include('inc_configmyb3.php');
     <td>
     <div class="hide" id="hide5">
       <fieldset id="bfbc2">
-        <legend>BFBC2/MOH Specific Settings:</legend>
+        <legend><?php echo $LANG['BFBC2_MOH']; ?></legend>
           <dl>
-            <dt>Configure BFBC2/MOH specific settings</dt>
+            <dt><?php echo $LANG['BFBC2_MOH_TIP']; ?></dt>
 	          <dd>
                 <span>
-			      <label>Max Say Line Length:</label>
-				  <input type="text" size="30" name="max_say_line_length" id="max_say_line_length" value="100" title="How long do you want the lines to be restricted to in the chat zone. (maximum length is 100)." />
+			      <label><?php echo $LANG['MAX_SAY_LINE']; ?></label>
+				  <input type="text" size="30" name="max_say_line_length" id="max_say_line_length" value="100" title="<?php echo $LANG['MAX_SAY_LINE_TIP']; ?>" />
 			    </span><br />
 			  </dd>
           </dl>
@@ -158,71 +149,71 @@ include('inc_configmyb3.php');
   <tr>
     <td>
       <fieldset id="gameserver">
-        <legend>Game Server Settings:</legend>
+        <legend><?php echo $LANG['GAME_SERVER_SETTINGS']; ?></legend>
           <dl>
-            <dt>Fill in your game server related information</dt>
+            <dt><?php echo $LANG['GAME_SERVER_SETTINGS_TIP']; ?></dt>
             <dd>
               <span>
-			    <label>Rcon Password:</label>
-				<input type="text" size="30" name="rcon_password" id="rcon_password" value="MYrCOnPaSS" title="Enter your rcon password." />
+			    <label><?php echo $LANG['RCONPASS']; ?></label>
+				<input type="text" size="30" name="rcon_password" id="rcon_password" value="MYrCOnPaSS" title="<?php echo $LANG['RCONPASS_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Server Port:</label>
-				<input type="text" size="30" name="port" id="port" value="28960" title="Enter your game server's port number." />
+			    <label><?php echo $LANG['SERVER_PORT']; ?></label>
+				<input type="text" size="30" name="port" id="port" value="28960" title="<?php echo $LANG['SERVER_PORT_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Public IP:</label>
-			    <input type="text" size="30" name="public_ip" id="public_ip" value="255.255.255.255" title="Enter your game server's public IP." />
+			    <label><?php echo $LANG['PUBLIC_IP']; ?></label>
+			    <input type="text" size="30" name="public_ip" id="public_ip" value="255.255.255.255" title="<?php echo $LANG['PUBLIC_IP_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Rcon IP:</label>
-				<input type="text" size="30" name="rcon_ip" id="rcon_ip" value="127.0.0.1" title="Enter your game server's rcon IP." />
+			    <label><?php echo $LANG['RCON_IP']; ?></label>
+				<input type="text" size="30" name="rcon_ip" id="rcon_ip" value="127.0.0.1" title="<?php echo $LANG['RCON_IP_TIP']; ?>" />
 			  </span><br />
               <div>
               <div class="hide" id="hide6">
                 <span>
-				  <label>Rcon Port:</label>
-				  <input type="text" size="30" name="rcon_port" id="rcon_port" value="19567" title="Enter your game server's port number for rcon access." />
+				  <label><?php echo $LANG['RCON_PORT']; ?></label>
+				  <input type="text" size="30" name="rcon_port" id="rcon_port" value="19567" title="<?php echo $LANG['RCON_PORT_TIP']; ?>" />
 				</span><br />
                 <span>
-				  <label>Timeout:</label>
-				  <input type="text" size="30" name="timeout" id="timeout" value="3" title="Timeout." />
+				  <label><?php echo $LANG['TIMEOUT']; ?></label>
+				  <input type="text" size="30" name="timeout" id="timeout" value="3" title="<?php echo $LANG['TIMEOUT_TIP']; ?>" />
 				</span><br />
               </div>
-			    <label>Punkbuster:</label>
-				<select style="width:207px;" name="pb" id="pb" title="Select on if you use Punkbuster, otherwise select off."><option value="0">----- Select Your PB Status -----</option><?php select_pbsettings(); ?></select>
+			    <label><?php echo $LANG['PUNKBUSTER']; ?></label>
+				<select style="width:207px;" name="pb" id="pb" title="<?php echo $LANG['PUNKBUSTER_TIP']; ?>"><option value="0">----- <?php echo $LANG['SELECT_PB_STATUS']; ?> -----</option><?php select_pbsettings(); ?></select>
 			  </div><br />
 			  <div class="hide" id="hide7">
               <span>
-			    <label>Game Log File:</label>
-				<select style="width:207px;" name="game_log" id="game_log" title="Select your game log file location."><option value="0">----- Select Location -----</option><option value="local">Local File</option><option value="ftp">FTP Location</option></select>
+			    <label><?php echo $LANG['GAME_LOG']; ?></label>
+				<select style="width:207px;" name="game_log" id="game_log" title="<?php echo $LANG['GAME_LOG_TIP']; ?>"><option value="0">----- <?php echo $LANG['SELECT_LOCATION']; ?> -----</option><option value="local">Local File</option><option value="ftp">FTP Location</option></select>
 			  </span><br />
 			  </div>
 			  <!-- Blackops Only -->
 			  <div class="hide" id="hide11">
               <span>
-			    <label>Game Log URL:</label>
-				<input type="text" size="60" name="game_log" id="game_log_url" title="Enter your game log URL" />
+			    <label><?php echo $LANG['GAME_LOG_URL']; ?></label>
+				<input type="text" size="60" name="game_log" id="game_log_url" title="<?php echo $LANG['GAME_LOG_URL_TIP']; ?>" />
 			  </span><br />
 			  </div>
               <div class="hide" id="hide1">
                 <span>
-				  <label>Local Path:</label>
-				  <input type="text" size="30" name="game_log_local" id="game_log_local" value="/path/to/games_mp.log" title="Enter full path to your game log file." />
+				  <label><?php echo $LANG['LOCAL_PATH']; ?></label>
+				  <input type="text" size="30" name="game_log_local" id="game_log_local" value="/path/to/games_mp.log" title="<?php echo $LANG['LOCAL_PATH_TIP']; ?>" />
 				</span><br />
               </div>
               <div class="hide" id="hide2">
                 <span>
-				  <label>FTP Address:</label>
-				  <input type="text" size="50" name="game_log_ftpadr" id="game_log_ftpadr" value="ftp://ftp.example.com/games/games_mp.log" title="Enter FTP address of your game log file including 'ftp://' at the beginning." />
+				  <label><?php echo $LANG['FTP_ADDRESS']; ?></label>
+				  <input type="text" size="50" name="game_log_ftpadr" id="game_log_ftpadr" value="ftp://ftp.example.com/games/games_mp.log" title="<?php echo $LANG['FTP_ADDRESS_TIP']; ?>" />
 				</span><br />
                 <span>
-				  <label>FTP User:</label>
-				  <input type="text" size="50" name="game_log_ftpusr" id="game_log_ftpusr" value="ftpuser" title="Enter your ftp user name" />
+				  <label><?php echo $LANG['FTP_USER']; ?></label>
+				  <input type="text" size="50" name="game_log_ftpusr" id="game_log_ftpusr" value="ftpuser" title="<?php echo $LANG['FTP_USER_TIP']; ?>" />
 				</span><br />
                 <span>
-				  <label>FTP Pass:</label>
-				  <input type="text" size="50" name="game_log_ftppas" id="game_log_ftppas" value="FtPpASSw0Rd" title="Enter your ftp password" />
+				  <label><?php echo $LANG['FTP_PASSWORD']; ?></label>
+				  <input type="text" size="50" name="game_log_ftppas" id="game_log_ftppas" value="FtPpASSw0Rd" title="<?php echo $LANG['FTP_PASSWORD_TIP']; ?>" />
 				</span><br />
               </div>
             </dd>
@@ -233,40 +224,40 @@ include('inc_configmyb3.php');
   <tr>
     <td>
       <fieldset id="autodocimg">
-        <legend>Autodoc Settings:</legend>
+        <legend><?php echo $LANG['AUTODOC_SETTINGS']; ?></legend>
           <dl>
-            <dt>Autodoc will generate a user documentation for all B3 commands.</dt>
+            <dt><?php echo $LANG['AUTODOC_SETTINGS_TIP']; ?></dt>
             <dd>
               <span>
-			    <label>Type:</label>
-				<select style="width:207px" name="type" id="type" title="Select autodoc file type you want to use."><option value="0">----- Select Autodoc Type -----</option><?php select_autodoc_type(); ?></select>
+			    <label><?php echo $LANG['TYPE']; ?></label>
+				<select style="width:207px" name="type" id="type" title="<?php echo $LANG['TYPE_TIP']; ?>"><option value="0">----- Select Autodoc Type -----</option><?php select_autodoc_type(); ?></select>
 			  </span><br />
               <span>
-			    <label>Max Level:</label>
-				<input type="text" size="30" name="maxlevel" id="maxlevel" value="100" title="If you want to exclude commands reserved for higher levels, you may enter a lower value here." />
+			    <label><?php echo $LANG['MAX_LEVEL']; ?></label>
+				<input type="text" size="30" name="maxlevel" id="maxlevel" value="100" title="<?php echo $LANG['MAX_LEVEL_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Destination:</label>
-				<select style="width:207px" name="autodoc" id="autodoc" title="Select the location where you want to generate your command documentation file."><option value="0">----- Select Location -----</option><option value="locala">Local File</option><option value="ftpa">FTP Location</option></select>
+			    <label><?php echo $LANG['DESTINATION']; ?></label>
+				<select style="width:207px" name="autodoc" id="autodoc" title="<?php echo $LANG['DESTINATION_TIP']; ?>"><option value="0">----- Select Location -----</option><option value="locala">Local File</option><option value="ftpa">FTP Location</option></select>
 			  </span><br />
               <div class="hide" id="hide3">
                 <span>
-				  <label>Local Path:</label>
-				  <input type="text" size="30" name="autodoc_local" id="autodoc_local" value="/path/to/b3_doc.html" title="Enter the full path and file name." />
+				  <label><?php echo $LANG['LOCAL_PATH']; ?></label>
+				  <input type="text" size="30" name="autodoc_local" id="autodoc_local" value="/path/to/b3_doc.html" title="<?php echo $LANG['LOCAL_PATH_TIP2']; ?>" />
 				</span><br />
               </div>
               <div class="hide" id="hide4">
                 <span>
-				  <label>FTP Address:</label>
-				  <input type="text" size="50" name="autodoc_ftpadr" id="autodoc_ftpadr" value="ftp://ftp.example.com/games/b3_doc.html" title="Enter the FTP address for your B3 command documentation file." />
+				  <label><?php echo $LANG['FTP_ADDRESS']; ?></label>
+				  <input type="text" size="50" name="autodoc_ftpadr" id="autodoc_ftpadr" value="ftp://ftp.example.com/games/b3_doc.html" title="<?php echo $LANG['FTP_ADDRESS_TIP2']; ?>" />
 				</span><br />
                 <span>
-				  <label>FTP User:</label>
-				  <input type="text" size="50" name="autodoc_ftpusr" id="autodoc_ftpusr" value="ftpuser" title="Enter your ftp user name" />
+				  <label><?php echo $LANG['FTP_USER']; ?></label>
+				  <input type="text" size="50" name="autodoc_ftpusr" id="autodoc_ftpusr" value="ftpuser" title="<?php echo $LANG['FTP_USER_TIP']; ?>" />
 				</span><br />
                 <span>
-				  <label>FTP Pass:</label>
-				  <input type="text" size="50" name="autodoc_ftppas" id="autodoc_ftppas" value="FtPpASSw0Rd" title="Enter your ftp password" />
+				  <label><?php echo $LANG['FTP_PASSWORD'];?></label>
+				  <input type="text" size="50" name="autodoc_ftppas" id="autodoc_ftppas" value="FtPpASSw0Rd" title="<?php echo $LANG['FTP_PASSWORD_TIP']; ?>" />
 				</span><br />
               </div>
             </dd>
@@ -277,41 +268,41 @@ include('inc_configmyb3.php');
   <tr>
     <td>
       <fieldset id="messages">
-        <legend>Messages:</legend>
+        <legend><?php echo $LANG['MESSAGES']; ?></legend>
           <dl>
-            <dt>These are B3 in game messages for specific events.</dt>
+            <dt><?php echo $LANG['MESSAGES_TIP']; ?></dt>
             <dd>
               <span>
-			    <label>Kicked By:</label>
-				<input type="text" size="60" name="kicked_by" id="kicked_by" value="$clientname^7 was kicked by $adminname^7 $reason" title="Enter the message that will be displayed when a player is kicked by a mod/admin." />
+			    <label><?php echo $LANG['KICKED_BY']; ?></label>
+				<input type="text" size="60" name="kicked_by" id="kicked_by" value="$clientname^7 was kicked by $adminname^7 $reason" title="<?php echo $LANG['KICKED_BY_TIP']; ?>" />
 		      </span><br />
               <span>
-			    <label>Kicked:</label>
-				<input type="text" size="60" name="kicked" id="kicked" value="$clientname^7 was kicked $reason" title="Enter the message that will be displayed when a player is kicked by B3." />
+			    <label><?php echo $LANG['KICKED']; ?></label>
+				<input type="text" size="60" name="kicked" id="kicked" value="$clientname^7 was kicked $reason" title="<?php echo $LANG['KICKED_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Banned By:</label>
-				<input type="text" size="60" name="banned_by" id="banned_by" value="$clientname^7 was banned by $adminname^7 $reason" title="Enter the message that will be displayed when a player is banned by a mod/admin." />
+			    <label><?php echo $LANG['BANNED_BY']; ?></label>
+				<input type="text" size="60" name="banned_by" id="banned_by" value="$clientname^7 was banned by $adminname^7 $reason" title="<?php echo $LANG['BANNED_BY_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Banned:</label>
-				<input type="text" size="60" name="banned" id="banned" value="$clientname^7 was banned $reason" title="Enter the message that will be displayed when a player is kicked by a B3." />
+			    <label><?php echo $LANG['BANNED']; ?></label>
+				<input type="text" size="60" name="banned" id="banned" value="$clientname^7 was banned $reason" title="<?php echo $LANG['BANNED_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Temp Banned By:</label>
-				<input type="text" size="60" name="temp_banned_by" id="temp_banned_by" value="$clientname^7 was temp banned by $adminname^7 for $banduration^7 $reason" title="Enter the message that will be displayed when a player is temp banned by a mod/admin." />
+			    <label><?php echo $LANG['TEMPBANNED_BY']; ?></label>
+				<input type="text" size="60" name="temp_banned_by" id="temp_banned_by" value="$clientname^7 was temp banned by $adminname^7 for $banduration^7 $reason" title="<?php echo $LANG['TEMPBANNED_BY_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Temp Banned:</label>
-				<input type="text" size="60" name="temp_banned" id="temp_banned" value="$clientname^7 was temp banned for $banduration^7 $reason" title="Enter the message that will be displayed when a player is temp banned by B3." />
+			    <label><?php echo $LANG['TEMPBANNED']; ?></label>
+				<input type="text" size="60" name="temp_banned" id="temp_banned" value="$clientname^7 was temp banned for $banduration^7 $reason" title="<?php echo $LANG['TEMPBANNED_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Unbanned By:</label>
-				<input type="text" size="60" name="unbanned_by" id="unbanned_by" value="$clientname^7 was un-banned by $adminname^7 $reason" title="Enter the message that will be displayed when a player is unbanned by a mod/admin." />
+			    <label><?php echo $LANG['UNBANNED_BY']; ?></label>
+				<input type="text" size="60" name="unbanned_by" id="unbanned_by" value="$clientname^7 was un-banned by $adminname^7 $reason" title="<?php echo $LANG['UNBANNED_BY_TIP']; ?>" />
 			  </span><br />
               <span>
-			    <label>Unbanned:</label>
-				<input type="text" size="60" name="unbanned" id="unbanned" value="$clientname^7 was un-banned $reason" title="Enter the message that will be displayed when a player is kicked by B3." />
+			    <label><?php echo $LANG['UNBANNED']; ?></label>
+				<input type="text" size="60" name="unbanned" id="unbanned" value="$clientname^7 was un-banned $reason" title="<?php echo $LANG['UNBANNED_TIP']; ?>" />
 			  </span><br />
             </dd>
           </dl>
@@ -322,18 +313,18 @@ include('inc_configmyb3.php');
   <tr>
     <td>
       <fieldset id="externalplugins">
-        <legend>External Plugins:</legend>
+        <legend><?php echo $LANG['EXTERNAL_PLUGINS']; ?></legend>
           <dl>
             <dt>
-              Enter here the path to the config folder for your external plugins.<br />
+              <?php echo $LANG['EXTERNAL_PLUGINS_TIP']; ?><br />
               <span style="margin-top:10px; display:inline-block; border:1px dotted #CCC; width:400px; padding:5px;">
-              @b3 : the folder where B3 code is installed in<br />
+              <?php echo $LANG['B3_FOLDER_TIP']; ?><br />
               </span>
             </dt>
             <dd>
               <span>
-			    <label>External Directory:</label>
-				<input type="text" size="30" name="external_dir" id="external_dir" value="@b3/extplugins" title="Enter here the path to the config folder for your external plugins." />
+			    <label><?php echo $LANG['EXTERNAL_DIR']; ?></label>
+				<input type="text" size="30" name="external_dir" id="external_dir" value="@b3/extplugins" title="<?php echo $LANG['EXTERNAL_DIR_TIP']; ?>" />
 			  </span><br />
             </dd>
           </dl>
@@ -344,80 +335,76 @@ include('inc_configmyb3.php');
   <tr>
     <td>
       <fieldset id="builtinplugins">
-        <legend>Built-in Plugins:</legend>
+        <legend><?php echo $LANG['BUILTIN_PLUGINS']; ?></legend>
           <dl>
             <dt>
-              Choose built-in plugins you want to use and enter their paths.<br />
+              <?php echo $LANG['BUILTIN_PLUGINS_TIP']; ?><br />
               <span style="margin-top:10px; display:inline-block; border:1px dotted #CCC; width:400px; padding:5px;">
-              @conf : the folder containing this config file<br />
+              <?php echo $LANG['CONF_FOLDER_TIP']; ?><br />
               </span>
             </dt>
             <dd>
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" checked="checked" name="censor" id="censor" title="Click to disable/enable this plugin" /> Censor</span>
-				<input type="text" size="40" name="censor_location" id="censor_location" value="@conf/plugin_censor.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" checked="checked" name="censor" id="censor" title="<?php echo $LANG['ENABLE_DISABLE_TIP']; ?>" /> Censor</span>
+				<input type="text" size="40" name="censor_location" id="censor_location" value="@conf/plugin_censor.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  </span><br />
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" checked="checked" name="spamcontrol" id="spamcontrol" title="Click to disable/enable this plugin" /> Spam Control</span>
-				<input type="text" size="40" name="spamcontrol_location" id="spamcontrol_location" value="@conf/plugin_spamcontrol.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" checked="checked" name="spamcontrol" id="spamcontrol" title="<?php echo $LANG['ENABLE_DISABLE_TIP']; ?>" /> Spam Control</span>
+				<input type="text" size="40" name="spamcontrol_location" id="spamcontrol_location" value="@conf/plugin_spamcontrol.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  </span><br />
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" checked="checked" name="admin_fake" id="admin_fake" title="You cannot disable this plugin" disabled="disabled" /> Admin</span>
-				<input type="checkbox" style="display:none;" checked="checked" name="admin" id="admin" title="You cannot disable this plugin" /></span>
-				<input type="text" size="40" name="admin_location" id="admin_location" value="@conf/plugin_admin.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" checked="checked" name="admin_fake" id="admin_fake" title="<?php echo $LANG['CANNOT_DISABLE_TIP']; ?>" disabled="disabled" /> Admin</span>
+				<input type="checkbox" style="display:none;" checked="checked" name="admin" id="admin" title="<?php echo $LANG['CANNOT_DISABLE_TIP']; ?>" /></span>
+				<input type="text" size="40" name="admin_location" id="admin_location" value="@conf/plugin_admin.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  <br />
 			  <div class="hide" id="hide8">
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" checked="checked" name="tk" id="tk" title="Click to disable/enable this plugin" /> Team Kill</span>
-				<input type="text" size="40" name="tk_location" id="tk_location" value="@conf/plugin_tk.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" checked="checked" name="tk" id="tk" title="<?php echo $LANG['ENABLE_DISABLE_TIP']; ?>" /> Team Kill</span>
+				<input type="text" size="40" name="tk_location" id="tk_location" value="@conf/plugin_tk.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  </span><br />
 			  </div>
 			  <div class="hide" id="hide9">
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" checked="checked" name="stats" id="stats" title="Click to disable/enable this plugin" /> Stats</span>
-				<input type="text" size="40" name="stats_location" id="stats_location" value="@conf/plugin_stats.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" checked="checked" name="stats" id="stats" title="<?php echo $LANG['ENABLE_DISABLE_TIP']; ?>" /> Stats</span>
+				<input type="text" size="40" name="stats_location" id="stats_location" value="@conf/plugin_stats.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  </span><br />
 			  </div>
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" checked="checked" name="pingwatch" id="pingwatch" title="Click to disable/enable this plugin" /> Ping Watch</span>
-				<input type="text" size="40" name="pingwatch_location" id="pingwatch_location" value="@conf/plugin_pingwatch.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" checked="checked" name="pingwatch" id="pingwatch" title="<?php echo $LANG['ENABLE_DISABLE_TIP']; ?>" /> Ping Watch</span>
+				<input type="text" size="40" name="pingwatch_location" id="pingwatch_location" value="@conf/plugin_pingwatch.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  </span><br />
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" checked="checked" name="adv" id="adv" title="Click to disable/enable this plugin" /> Advertise</span>
-				<input type="text" size="40" name="adv_location" id="adv_location" value="@conf/plugin_adv.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" checked="checked" name="adv" id="adv" title="<?php echo $LANG['ENABLE_DISABLE_TIP']; ?>" /> Advertise</span>
+				<input type="text" size="40" name="adv_location" id="adv_location" value="@conf/plugin_adv.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  </span><br />
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" checked="checked" name="status" id="status" title="Click to disable/enable this plugin" /> Status</span>
-				<input type="text" size="40" name="status_location" id="status_location" value="@conf/plugin_status.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" checked="checked" name="status" id="status" title="<?php echo $LANG['ENABLE_DISABLE_TIP']; ?>" /> Status</span>
+				<input type="text" size="40" name="status_location" id="status_location" value="@conf/plugin_status.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  </span><br />
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" checked="checked" name="welcome" id="welcome" title="Click to disable/enable this plugin" /> Welcome</span>
-				<input type="text" size="40" name="welcome_location" id="welcome_location" value="@conf/plugin_welcome.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" checked="checked" name="welcome" id="welcome" title="<?php echo $LANG['ENABLE_DISABLE_TIP']; ?>" /> Welcome</span>
+				<input type="text" size="40" name="welcome_location" id="welcome_location" value="@conf/plugin_welcome.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  </span><br />
 			  <div class="hide" id="hide10">
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" checked="checked" name="punkbuster" id="punkbuster" title="Click to disable/enable this plugin" /> Punkbuster</span>
-				<input type="text" size="40" name="punkbuster_location" id="punkbuster_location" value="@conf/plugin_punkbuster.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" checked="checked" name="punkbuster" id="punkbuster" title="<?php echo $LANG['ENABLE_DISABLE_TIP']; ?>" /> Punkbuster</span>
+				<input type="text" size="40" name="punkbuster_location" id="punkbuster_location" value="@conf/plugin_punkbuster.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  </span><br />
 			  </div>
               <span>
 			    <span class="checkbox_text">
-				<input type="checkbox" class="checkbox-1" name="xlrstats" id="xlrstats" title="Click to disable/enable this plugin : 
-					This is a non-standard plugin, and quite resource heavy. Please take
-					a look in the B3 forums (look for XLR Extensions) for more
-					information before enabling this. Extra database tables are
-					necessary." /> XLRstats</span>
-				<input type="text" size="40" name="xlrstats_location" id="xlrstats_location" value="@b3/extplugins/conf/xlrstats.xml" title="Enter path to plugin config file" />
+				<input type="checkbox" class="checkbox-1" name="xlrstats" id="xlrstats" title="<?php echo $LANG['XLRSTATS_TIP']; ?>" /> XLRstats</span>
+				<input type="text" size="40" name="xlrstats_location" id="xlrstats_location" value="@b3/extplugins/conf/xlrstats.xml" title="<?php echo $LANG['ENTER_PATH']; ?>" />
 			  </span><br />
             </dd>
           </dl>
@@ -426,8 +413,8 @@ include('inc_configmyb3.php');
   </tr>
   <tr>
     <td align="right">
-	  <button type="submit" id="save" name="save" title="Click to save your config file">Save Config</button>
-	  <button type="reset" id="clear" name="clear" title="Click to reset all settings to their default values">Reset</button>
+	  <button type="submit" id="save" name="save" title="<?php echo $LANG['SAVE_BUTTON_TIP']; ?>"><?php echo $LANG['SAVE_BUTTON']; ?></button>
+	  <button type="reset" id="clear" name="clear" title="<?php echo $LANG['RESET_BUTTON_TIP']; ?>"><?php echo $LANG['RESET_BUTTON']; ?></button>
 	</td>
   </tr>
 </tbody>
@@ -435,7 +422,7 @@ include('inc_configmyb3.php');
 </form>
 <div class="footer">
   <div class="footer_text">
-    <span id="osx-modal"><a href="#" class="osx">Privacy Statement</a></span>&nbsp;|
+    <span id="osx-modal"><a href="#" class="osx"><?php echo $LANG['PRIVACY_STATEMENT']; ?></a></span>&nbsp;|
     <a href="http://www.bigbrotherbot.net">BigBrotherBot</a>
 	<span class="copyright">Copyright &copy; <a href="http://www.fps-gamer.net">Freelander</a> 2011 - Version <?php echo $version; ?></span>
   </div>
@@ -454,11 +441,11 @@ include('inc_configmyb3.php');
 
 <!--Privacy statement content starts here -->
 <div id="osx-modal-content">
-	<div id="osx-modal-title">Our Privacy Statement</div>
+	<div id="osx-modal-title"><?php echo $LANG['OUR_PRIVACY_STATEMENT']; ?></div>
 	<div class="close"><a href="#" class="simplemodal-close">x</a></div>
 	<div id="osx-modal-data">
 		<?php echo file_get_contents("privacy.txt"); ?>
-		<p><button class="simplemodal-close">Close</button> <span>(or press ESC or click the overlay)</span></p>
+		<p><button class="simplemodal-close"><?php echo $LANG['CLOSE']; ?></button> <span><?php echo $LANG['PRESS_ESC']; ?></span></p>
 	</div>
 </div>
 <!--Privacy statement content ends here -->
