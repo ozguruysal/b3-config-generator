@@ -4,7 +4,7 @@
  * Author: Freelander
  * Author URI: http://www.fps-gamer.net
  *
- * Copyright(c)2010  Freelander  <mailto:freelander@fps-gamer.net>
+ * Copyright(c)2010 - 2011 Freelander  <mailto:freelander@fps-gamer.net>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as 
@@ -20,26 +20,27 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-$version = '1.4';
+$version = '1.5';
 $b3_version = '1.5';
 
 function select_your_game()
 {
   //list of available parsers
   $parsers = array ( 
-                     "bfbc2"   => "Battlefield Bad Company 2",
-                     "cod"     => "Call of Duty",
-                     "cod2"    => "Call of Duty 2",
-                     "cod4"    => "Call of Duty 4",
-                     "cod5"    => "Call of Duty: World at War",
-                     "cod6"    => "Call of Duty: Modern Warfare 2",
-                     "cod7"    => "Call of Duty: Black Ops",
-                     "moh"     => "Medal of Honor",
-                     "oa081"   => "Open Arena",
-                     "smg11"   => "Smokin' Guns",
-                     "iourt41" => "Urban Terror", 
-                     "etpro"   => "Wolfenstein Enemy Territory", 
-                     "wop"     => "World of Padman"
+                     "bfbc2"     => "Battlefield Bad Company 2",
+                     "cod"       => "Call of Duty",
+                     "cod2"      => "Call of Duty 2",
+                     "cod4"      => "Call of Duty 4",
+                     "cod5"      => "Call of Duty: World at War",
+                     "cod6"      => "Call of Duty: Modern Warfare 2",
+                     "cod7"      => "Call of Duty: Black Ops",
+                     "homefront" => "Homefront",
+                     "moh"       => "Medal of Honor",
+                     "oa081"     => "Open Arena",
+                     "smg11"     => "Smokin' Guns",
+                     "iourt41"   => "Urban Terror", 
+                     "etpro"     => "Wolfenstein Enemy Territory", 
+                     "wop"       => "World of Padman"
                    );
   
   foreach ($parsers as $parser => $gamename)
@@ -210,13 +211,26 @@ function generate_b3config_xml()
          );
   }
   
-  //destroy non cod7 variables
+  //destroy non cod7 variables and set pb support off
   if($parser == 'cod7')
   {
     unset(
           $b3_xml_input['plugins_s']['tk'],
           $b3_xml_input['plugins_s']['punkbuster']
          );
+
+    $b3_xml_input['server']['punkbuster'] = 'off';
+  }
+  
+  //destroy non homefront variables and set pb support off
+  if($parser == 'homefront')
+  {
+    unset(
+          $b3_xml_input['server']['game_log'],
+          $b3_xml_input['plugins_s']['punkbuster']
+         );
+
+    $b3_xml_input['server']['punkbuster'] = 'off';
   }
   
   //Prepare the XML document

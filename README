@@ -17,6 +17,12 @@ http://www.bigbrotherbot.net/forums or my e-mail above.
 2. Chmod 'tmp' folder to 777
 3. Point your web browser to http://www.example.com/b3-config-generator/
 
+== v1.5 (28.05.2011) ==
+
+* Homefront support added
+* Automatically set punkbuster off when cod7 is selected
+* Turkish translation file added
+
 == Changelog ==
 
 == v1.4 (06.04.2011) ==

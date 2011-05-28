@@ -63,7 +63,7 @@ $(document).ready(function(){
 				$("#hide10").slideUp("fast");	//Slide Up Effect (Punkbuster Plugin)
 		} else {
 			$("#hide6").slideUp("fast");	//Slide Up Effect (Rcon Port & Timeout)
-			if ($(this).val() == "0" || $(this).val() == "cod7") {
+			if ($(this).val() == "0" || $(this).val() == "cod7" || $(this).val() == "homefront") {
 				$("#hide7").slideUp("fast");	//Slide Up Effect (Game Log File Selection)
 			} else {
 				$("#hide7").slideDown("fast"); //Slide Down Effect (Game Log File Selection)
@@ -80,9 +80,18 @@ $(document).ready(function(){
 			$("#hide1").slideUp("fast");	//Slide Up Effect (Game Log Local Path)
 			$("#hide2").slideUp("fast");	//Slide Up Effect (FTP Information)
 			$("#hide8").slideUp("fast");	//Slide Up Effect (Team Kill Plugin)
-			$("#hide10").slideUp("fast");	//Slide Up Effect (Punkbuster Plugin)
 		} else {
 			$("#hide11").slideUp("fast");	//Slide Up Effect (Game Log URL)
 		}
 	});
+	
+	$("#parser").change(function(){
+		if ($(this).val() == "homefront" || $(this).val() == "cod7") {
+			$("#hide12").slideUp("fast");	//Slide Up Effect (Punkbuster Support)
+			$("#hide10").slideUp("fast");	//Slide Up Effect (Punkbuster Plugin)
+		} else {
+			$("#hide12").slideDown("fast");	//Slide Down Effect (Punkbuster Support)
+		}
+	});
+
 });

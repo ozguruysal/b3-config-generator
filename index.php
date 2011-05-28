@@ -4,7 +4,7 @@
  * Author: Freelander
  * Author URI: http://www.fps-gamer.net
  *
- * Copyright(c)2010  Freelander  <mailto:freelander@fps-gamer.net>
+ * Copyright(c)2010 - 2011 Freelander  <mailto:freelander@fps-gamer.net>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as 
@@ -170,18 +170,20 @@ include('inc_lang.php');
 				<input type="text" size="30" name="rcon_ip" id="rcon_ip" value="127.0.0.1" title="<?php echo $LANG['RCON_IP_TIP']; ?>" />
 			  </span><br />
               <div>
-              <div class="hide" id="hide6">
-                <span>
-				  <label><?php echo $LANG['RCON_PORT']; ?></label>
-				  <input type="text" size="30" name="rcon_port" id="rcon_port" value="19567" title="<?php echo $LANG['RCON_PORT_TIP']; ?>" />
-				</span><br />
-                <span>
-				  <label><?php echo $LANG['TIMEOUT']; ?></label>
-				  <input type="text" size="30" name="timeout" id="timeout" value="3" title="<?php echo $LANG['TIMEOUT_TIP']; ?>" />
-				</span><br />
-              </div>
-			    <label><?php echo $LANG['PUNKBUSTER']; ?></label>
-				<select style="width:207px;" name="pb" id="pb" title="<?php echo $LANG['PUNKBUSTER_TIP']; ?>"><option value="0">----- <?php echo $LANG['SELECT_PB_STATUS']; ?> -----</option><?php select_pbsettings(); ?></select>
+                <div class="hide" id="hide6">
+                  <span>
+				    <label><?php echo $LANG['RCON_PORT']; ?></label>
+				    <input type="text" size="30" name="rcon_port" id="rcon_port" value="19567" title="<?php echo $LANG['RCON_PORT_TIP']; ?>" />
+				  </span><br />
+                  <span>
+				    <label><?php echo $LANG['TIMEOUT']; ?></label>
+				    <input type="text" size="30" name="timeout" id="timeout" value="3" title="<?php echo $LANG['TIMEOUT_TIP']; ?>" />
+				  </span><br />
+                </div>
+			    <div class="hide" id="hide12">
+			      <label><?php echo $LANG['PUNKBUSTER']; ?></label>
+				  <select style="width:207px;" name="pb" id="pb" title="<?php echo $LANG['PUNKBUSTER_TIP']; ?>"><option value="0">----- <?php echo $LANG['SELECT_PB_STATUS']; ?> -----</option><?php select_pbsettings(); ?></select>
+			    </div>
 			  </div><br />
 			  <div class="hide" id="hide7">
               <span>

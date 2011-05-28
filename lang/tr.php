@@ -85,122 +85,122 @@ $LANG['DB_NAME_TIP'] = "B3 veritabanı ismini girin.";
 /**********************************************************************************
  * BFBC2/MOH SPECIFIC SETTINGS
  **********************************************************************************/
-$LANG['BFBC2_MOH'] = "BFBC2/MOH Specific Settings:";
-$LANG['BFBC2_MOH_TIP'] = "Configure BFBC2/MOH specific settings";
-$LANG['MAX_SAY_LINE'] = "Max Say Line Length:";
-$LANG['MAX_SAY_LINE_TIP'] = "How long do you want the lines to be restricted to in the chat zone. (maximum length is 100).";
+$LANG['BFBC2_MOH'] = "BFBC2/MOH Ayarları:";
+$LANG['BFBC2_MOH_TIP'] = "BFBC2/MOH ile ilgili ayarlamaları yapın";
+$LANG['MAX_SAY_LINE'] = "Konuşma satırındaki maksimum karakter sayısı:";
+$LANG['MAX_SAY_LINE_TIP'] = "Oyun içi konuşma satırlarında izin vermek istediğiniz karakter sayısı. (maksimum uzunluk 100 karakterdir).";
 
 
 /**********************************************************************************
  * GAME SERVER SETTINGS
  **********************************************************************************/
-$LANG['GAME_SERVER_SETTINGS'] = "Game Server Settings:";
-$LANG['GAME_SERVER_SETTINGS_TIP'] = "Fill in your game server related information";
-$LANG['RCONPASS'] = "Rcon Password:";
-$LANG['RCONPASS_TIP'] = "Enter your rcon password.";
-$LANG['SERVER_PORT'] = "Server Port:";
-$LANG['SERVER_PORT_TIP'] = "Enter your game server's port number.";
+$LANG['GAME_SERVER_SETTINGS'] = "Oyun Sunucusu Ayarları:";
+$LANG['GAME_SERVER_SETTINGS_TIP'] = "Oyun sunucusu ayarlarını girin";
+$LANG['RCONPASS'] = "Rcon Parolası:";
+$LANG['RCONPASS_TIP'] = "Rcon parolanızı girin.";
+$LANG['SERVER_PORT'] = "Sunucu Portu:";
+$LANG['SERVER_PORT_TIP'] = "Oyun sunucunuzun port numarasını girin.";
 $LANG['PUBLIC_IP'] = "Public IP:";
-$LANG['PUBLIC_IP_TIP'] = "Enter your game server's public IP.";
+$LANG['PUBLIC_IP_TIP'] = "Oyun sunucunuzun Public IP numarasını girin.";
 $LANG['RCON_IP'] = "Rcon IP:";
-$LANG['RCON_IP_TIP'] = "Enter your game server's rcon IP.";
+$LANG['RCON_IP_TIP'] = "Oyun sunucunuzun Rcon IP numarasını girin.";
 $LANG['RCON_PORT'] = "Rcon Port:";
-$LANG['RCON_PORT_TIP'] = "Enter your game server's port number for rcon access.";
-$LANG['TIMEOUT'] = "Timeout:";
-$LANG['TIMEOUT_TIP'] = "Timeout value.";
+$LANG['RCON_PORT_TIP'] = "Oyun sunucunuzun rcon port numarasını girin.";
+$LANG['TIMEOUT'] = "Zaman Aşımı:";
+$LANG['TIMEOUT_TIP'] = "Zaman Aşımı (Timeout)süresi.";
 $LANG['PUNKBUSTER'] = "Punkbuster:";
-$LANG['PUNKBUSTER_TIP'] = "Select on if you use Punkbuster, otherwise select off.";
-$LANG['GAME_LOG'] = "Game Log File:";
-$LANG['GAME_LOG_TIP'] = "Select your game log file location.";
-$LANG['GAME_LOG_URL'] = "Game Log URL:";
-$LANG['GAME_LOG_URL_TIP'] = "Enter your game log URL";
-$LANG['LOCAL_PATH'] = "Local Path:";
-$LANG['LOCAL_PATH_TIP'] = "Enter full path to your game log file.";
-$LANG['FTP_ADDRESS'] = "FTP Address:";
-$LANG['FTP_ADDRESS_TIP'] = "Enter FTP address of your game log file including 'ftp://' at the beginning.";
-$LANG['FTP_USER'] = "FTP User:";
-$LANG['FTP_USER_TIP'] = "Enter your ftp user name";
-$LANG['FTP_PASSWORD'] = "FTP Pass:";
-$LANG['FTP_PASSWORD_TIP'] = "Enter your ftp password";
+$LANG['PUNKBUSTER_TIP'] = "Eğer Punkbuster etkinse 'on', değilse 'off' olarak seçiniz.";
+$LANG['GAME_LOG'] = "Oyun Kütük Dosyası:";
+$LANG['GAME_LOG_TIP'] = "Oyun kütük (log) dosyasının tutulduğu dosya yolunu girin.";
+$LANG['GAME_LOG_URL'] = "Oyun Kütük Dosyası URL:";
+$LANG['GAME_LOG_URL_TIP'] = "Oyun kütük dosyası için belirlenen URL' yi girin.";
+$LANG['LOCAL_PATH'] = "Yerel Yol:";
+$LANG['LOCAL_PATH_TIP'] = "Oyun kütük dosyası için tam dosya yolunu girin.";
+$LANG['FTP_ADDRESS'] = "FTP Adresi:";
+$LANG['FTP_ADDRESS_TIP'] = "Oyun kütük dosyası için FTP adresini girin. (Baslında 'ftp://' ile birlikte)";
+$LANG['FTP_USER'] = "FTP Kullanıcı:";
+$LANG['FTP_USER_TIP'] = "FTP kullanıcı adınızı girin";
+$LANG['FTP_PASSWORD'] = "FTP Parolası:";
+$LANG['FTP_PASSWORD_TIP'] = "FTP parolanızı girin.";
 
 
 /**********************************************************************************
  * AUTODOC SETTINGS
  **********************************************************************************/
-$LANG['AUTODOC_SETTINGS'] = "Autodoc Settings:";
-$LANG['AUTODOC_SETTINGS_TIP'] = "Autodoc will generate a user documentation for all B3 commands.";
-$LANG['TYPE'] = "Type:";
-$LANG['TYPE_TIP'] = "Select autodoc file type you want to use.";
-$LANG['MAX_LEVEL'] = "Max Level:";
-$LANG['MAX_LEVEL_TIP'] = "If you want to exclude commands reserved for higher levels, you may enter a lower value here.";
-$LANG['DESTINATION'] = "Destination:";
-$LANG['DESTINATION_TIP'] = "Select the location where you want to generate your command documentation file.";
-$LANG['LOCAL_PATH_TIP2'] = "Enter the full path and file name.";
-$LANG['FTP_ADDRESS_TIP2'] = "Enter the FTP address for your B3 command documentation file.";
+$LANG['AUTODOC_SETTINGS'] = "Autodoc Ayarları:";
+$LANG['AUTODOC_SETTINGS_TIP'] = "Autodoc tüm B3 komutları için bir kullanıcı dokümanı oluşturacaktır.";
+$LANG['TYPE'] = "Tip:";
+$LANG['TYPE_TIP'] = "Kullanmak istediğinizi autodoc dosya tipini seçin.";
+$LANG['MAX_LEVEL'] = "Maksimum Düzey:";
+$LANG['MAX_LEVEL_TIP'] = "Eğer daha yüksek kullanıcı düzeyleri için komutları gizlemek isterseniz bu alana daha düşük bir rakam girin.";
+$LANG['DESTINATION'] = "Hedef:";
+$LANG['DESTINATION_TIP'] = "Komut dokümantasyon dosyasını oluşturmak istediğiniz konumu girin.";
+$LANG['LOCAL_PATH_TIP2'] = "Tam dosya yolunu ve dosya adını girin.";
+$LANG['FTP_ADDRESS_TIP2'] = "B3 komut dokümantasyon dosyasını oluşturmak istediğiniz FTP adresini girin.";
 
 
 /**********************************************************************************
  * MESSAGE SETTINGS
  **********************************************************************************/
-$LANG['MESSAGES'] = "Messages:";
-$LANG['MESSAGES_TIP'] = "These are B3 in game messages for specific events.";
-$LANG['KICKED_BY'] = "Kicked By:";
-$LANG['KICKED_BY_TIP'] = "Enter the message that will be displayed when a player is kicked by a mod/admin.";
-$LANG['KICKED'] = "Kicked:";
-$LANG['KICKED_TIP'] = "Enter the message that will be displayed when a player is kicked by B3.";
-$LANG['BANNED_BY'] = "Banned By:";
-$LANG['BANNED_BY_TIP'] = "Enter the message that will be displayed when a player is banned by a mod/admin.";
-$LANG['BANNED'] = "Banned:";
-$LANG['BANNED_TIP'] = "Enter the message that will be displayed when a player is kicked by a B3.";
-$LANG['TEMPBANNED_BY'] = "Temp Banned By:";
-$LANG['TEMPBANNED_BY_TIP'] = "Enter the message that will be displayed when a player is temp banned by a mod/admin.";
-$LANG['TEMPBANNED'] = "Temp Banned:";
-$LANG['TEMPBANNED_TIP'] = "Enter the message that will be displayed when a player is temp banned by B3.";
-$LANG['UNBANNED_BY'] = "Unbanned By:";
-$LANG['UNBANNED_BY_TIP'] = "Enter the message that will be displayed when a player is unbanned by a mod/admin.";
-$LANG['UNBANNED'] = "Unbanned:";
-$LANG['UNBANNED_TIP'] = "Enter the message that will be displayed when a player is kicked by B3.";
+$LANG['MESSAGES'] = "Mesajlar:";
+$LANG['MESSAGES_TIP'] = "Farlı olaylar için gösterilecek B3 oyun içi mesajları.";
+$LANG['KICKED_BY'] = "Dışarı Atan:";
+$LANG['KICKED_BY_TIP'] = "Bir oyuncunun yönetici tarafından dışarı atıldığında gösterilecek mesajı girin.";
+$LANG['KICKED'] = "Dışarı Atıldı:";
+$LANG['KICKED_TIP'] = "Bir oyuncunun B3 tarafından dışarı atıldığında gösterilecek mesajı girin.";
+$LANG['BANNED_BY'] = "Yasaklayan:";
+$LANG['BANNED_BY_TIP'] = "Bir oyuncunun yönetici tarafından yasaklandığında gösterilecek mesajı girin.";
+$LANG['BANNED'] = "Yasaklandı:";
+$LANG['BANNED_TIP'] = "Bir oyuncunun B3 tarafından yasaklandığında gösterilecek mesajı girin.";
+$LANG['TEMPBANNED_BY'] = "Geçici Olarak Yasaklayan:";
+$LANG['TEMPBANNED_BY_TIP'] = "Bir oyuncunun yönetici tarafından geçici olarak yasaklandığında gösterilecek mesajı girin.";
+$LANG['TEMPBANNED'] = "Geçici Olarak Yasaklandı:";
+$LANG['TEMPBANNED_TIP'] = "Bir oyuncunun B3 tarafından geçici olarak yasaklandığında gösterilecek mesajı girin.";
+$LANG['UNBANNED_BY'] = "Yasağı Kaldıran:";
+$LANG['UNBANNED_BY_TIP'] = "Bir oyuncunun yönetici tarafından yasağının kaldırıldığında gösterilecek mesajı girin.";
+$LANG['UNBANNED'] = "Yasak Kaldırıldı:";
+$LANG['UNBANNED_TIP'] = "Bir oyuncunun B3 tarafından yasağının kaldırıldığında gösterilecek mesajı girin.";
 
 
 /**********************************************************************************
  * EXTERNAL PLUGINS
  **********************************************************************************/
-$LANG['EXTERNAL_PLUGINS'] = "External Plugins:";
-$LANG['EXTERNAL_PLUGINS_TIP'] = "Enter here the path to the config folder for your external plugins.";
-$LANG['B3_FOLDER_TIP'] = "@b3 : the folder where B3 code is installed in";
-$LANG['EXTERNAL_DIR'] = "External Directory:";
-$LANG['EXTERNAL_DIR_TIP'] = "Enter here the path to the config folder for your external plugins.";
+$LANG['EXTERNAL_PLUGINS'] = "Harici Eklentiler:";
+$LANG['EXTERNAL_PLUGINS_TIP'] = "Harici eklentilerinizin ayar dosyalarının bulundupu klasör yolunu girin.";
+$LANG['B3_FOLDER_TIP'] = "@b3 : B3 dosyalarının yüklü olduğu klasör.";
+$LANG['EXTERNAL_DIR'] = "Harici Dizin:";
+$LANG['EXTERNAL_DIR_TIP'] = "Harici eklentilerinizin ayar dosyalarının bulundupu klasör yolunu girin.";
 
 
 /**********************************************************************************
  * BUILT-IN PLUGINS
  **********************************************************************************/
-$LANG['BUILTIN_PLUGINS'] = "Built-in Plugins:";
-$LANG['BUILTIN_PLUGINS_TIP'] = "Choose built-in plugins you want to use and enter their paths.";
-$LANG['CONF_FOLDER_TIP'] = "@conf : the folder containing this config file";
-$LANG['ENABLE_DISABLE_TIP'] = "Click to disable/enable this plugin";
-$LANG['ENTER_PATH'] = "Enter path to plugin config file";
-$LANG['CANNOT_DISABLE_TIP'] = "You cannot disable this plugin";
-$LANG['XLRSTATS_TIP'] = "Click to disable/enable this plugin : 
-                         This is a non-standard plugin, and quite resource heavy. Please take
-                         a look in the B3 forums (look for XLR Extensions) for more
-                         information before enabling this. Extra database tables are
-                         necessary.";
+$LANG['BUILTIN_PLUGINS'] = "Dahili Eklentiler:";
+$LANG['BUILTIN_PLUGINS_TIP'] = "Kullanmak istediğiniz dahili eklentileri seçin ve dosya yollarını girin.";
+$LANG['CONF_FOLDER_TIP'] = "@conf : dahili eklentilerin ayar dosyalarının bulunduğu klasör.";
+$LANG['ENABLE_DISABLE_TIP'] = "Bu eklentiyi etkinleştirmek veya devre dışı bırakmak için tıklayın.";
+$LANG['ENTER_PATH'] = "Eklenti ayar dosyası yolunu girin.";
+$LANG['CANNOT_DISABLE_TIP'] = "Bu eklentiyi devre dışı bırakamazsınız.";
+$LANG['XLRSTATS_TIP'] = "Bu eklentiyi etkinleştirmek veya devre dışı bırakmak için tıklayın. :
+                         Bu eklenti sistem kaynaklarınızı ciddi oranda kullanabilir. Lütfen
+                         bu eklentiyi etkinleştirmeden önce B3 forumlarını inceleyerek daha
+                         fazla bilgi edininiz.  İlave veri tabanı dosyaları gereklidir.
+                        ";
 
 /**********************************************************************************
  * MISC
  **********************************************************************************/
-$LANG['SELECT_YOUR_GAME'] = "Select Your Game";
-$LANG['SELECT_LOG_LEVEL'] = "Select Log Level";
-$LANG['SELECT_PB_STATUS'] = "Select Your PB Status";
-$LANG['SELECT_LOCATION'] = "Select Location";
-$LANG['SAVE_BUTTON'] = "Save Config";
-$LANG['SAVE_BUTTON_TIP'] = "Click to save your config file";
-$LANG['RESET_BUTTON'] = "Reset";
-$LANG['RESET_BUTTON_TIP'] = "Click to reset all settings to their default values";
-$LANG['PRIVACY_STATEMENT'] = "Privacy Statement";
-$LANG['OUR_PRIVACY_STATEMENT'] = "Our Privacy Statement";
-$LANG['CLOSE'] = "Close";
-$LANG['PRESS_ESC'] = "(or press ESC or click the overlay)";
+$LANG['SELECT_YOUR_GAME'] = "Oyun Seçin";
+$LANG['SELECT_LOG_LEVEL'] = "Kütük Dosyası Düzeyini Seçin";
+$LANG['SELECT_PB_STATUS'] = "PB Durumunu Seçin";
+$LANG['SELECT_LOCATION'] = "Konum Seçin";
+$LANG['SAVE_BUTTON'] = "Kaydet";
+$LANG['SAVE_BUTTON_TIP'] = "Ayar Dosyasını Kaydet";
+$LANG['RESET_BUTTON'] = "Sil";
+$LANG['RESET_BUTTON_TIP'] = "Tüm Ayarları Sil";
+$LANG['PRIVACY_STATEMENT'] = "Gizlilik Bildirimi";
+$LANG['OUR_PRIVACY_STATEMENT'] = "Gizlilik Bildirimi";
+$LANG['CLOSE'] = "Kapat";
+$LANG['PRESS_ESC'] = " (veya ESC veya kutucuğun dışına tıklayın)";
 
 ?>

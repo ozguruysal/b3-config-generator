@@ -4,7 +4,7 @@
  * Author: Freelander
  * Author URI: http://www.fps-gamer.net
  *
- * Copyright(c)2010  Freelander  <mailto:freelander@fps-gamer.net>
+ * Copyright(c)2010 - 2011 Freelander  <mailto:freelander@fps-gamer.net>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as 
