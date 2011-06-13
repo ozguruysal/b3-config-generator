@@ -195,7 +195,7 @@ include('inc_lang.php');
 			  <div class="hide" id="hide11">
               <span>
 			    <label><?php echo $LANG['GAME_LOG_URL']; ?></label>
-				<input type="text" size="60" name="game_log" id="game_log_url" title="<?php echo $LANG['GAME_LOG_URL_TIP']; ?>" />
+				<input type="text" size="60" name="game_log_url" id="game_log_url" title="<?php echo $LANG['GAME_LOG_URL_TIP']; ?>" />
 			  </span><br />
 			  </div>
               <div class="hide" id="hide1">
