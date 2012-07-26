@@ -4,7 +4,7 @@
  * Author: Freelander
  * Author URI: http://www.fps-gamer.net
  *
- * Copyright(c)2010 - 2011 Freelander  <mailto:freelander@fps-gamer.net>
+ * Copyright(c)2010 - 2012 Freelander  <mailto:freelander@fps-gamer.net>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as 
@@ -148,6 +148,37 @@ include('inc_lang.php');
   
   <tr>
     <td>
+    <div class="hide" id="hide13">
+      <fieldset id="bf3">
+        <legend><?php echo $LANG['BF3']; ?></legend>
+        <dl>
+          <dt><?php echo $LANG['BF3_TIP']; ?></dt>
+          <dd>
+            <span>
+              <label><?php echo $LANG['MAX_SAY_LINE']; ?></label>
+              <input type="text" size="30" name="max_say_line_length" id="max_say_line_length" value="128" title="<?php echo $LANG['MAX_SAY_LINE_TIP']; ?>" />
+            </span><br />
+            <span>
+              <label><?php echo $LANG['MESSAGE_DELAY']; ?></label>
+              <input type="text" size="30" name="message_delay" id="message_delay" value="0.8" title="<?php echo $LANG['MESSAGE_DELAY_TIP']; ?>" />
+            </span><br />
+            <span>
+              <label><?php echo $LANG['BIG_B3_PRIVATE_RESPONSES']; ?></label>
+              <select style="width:207px;" name="big_b3_private_responses" id="big_b3_private_responses" title="<?php echo $LANG['BIG_B3_PRIVATE_RESPONSES_TIP']; ?>"><option value="0">----- <?php echo $LANG['SELECT_OPTION']; ?> -----</option><?php get_switch(); ?></select>
+            </span><br />
+            <span>
+              <label><?php echo $LANG['BIG_MSG_DURATION']; ?></label>
+              <input type="text" size="30" name="big_msg_duration" id="big_msg_duration" value="6" title="<?php echo $LANG['BIG_MSG_DURATION_TIP']; ?>" />
+            </span><br />
+          </dd>
+        </dl>
+      </fieldset>
+    </div>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
       <fieldset id="gameserver">
         <legend><?php echo $LANG['GAME_SERVER_SETTINGS']; ?></legend>
           <dl>
@@ -182,7 +213,7 @@ include('inc_lang.php');
                 </div>
 			    <div class="hide" id="hide12">
 			      <label><?php echo $LANG['PUNKBUSTER']; ?></label>
-				  <select style="width:207px;" name="pb" id="pb" title="<?php echo $LANG['PUNKBUSTER_TIP']; ?>"><option value="0">----- <?php echo $LANG['SELECT_PB_STATUS']; ?> -----</option><?php select_pbsettings(); ?></select>
+				  <select style="width:207px;" name="pb" id="pb" title="<?php echo $LANG['PUNKBUSTER_TIP']; ?>"><option value="0">----- <?php echo $LANG['SELECT_PB_STATUS']; ?> -----</option><?php get_switch(); ?></select>
 			    </div>
 			  </div><br />
 			  <div class="hide" id="hide7">
@@ -426,7 +457,7 @@ include('inc_lang.php');
   <div class="footer_text">
     <span id="osx-modal"><a href="#" class="osx"><?php echo $LANG['PRIVACY_STATEMENT']; ?></a></span>&nbsp;|
     <a href="http://www.bigbrotherbot.net">BigBrotherBot</a>
-	<span class="copyright">Copyright &copy; <a href="http://www.fps-gamer.net">Freelander</a> 2011 - Version <?php echo $version; ?></span>
+	<span class="copyright">Copyright &copy; <a href="http://www.fps-gamer.net">Freelander</a> 2012 - Version <?php echo $version; ?></span>
   </div>
     <span class="validator_logo">
       <a href="http://validator.w3.org/check?uri=referer">

@@ -50,14 +50,22 @@ $(document).ready(function(){
 			$("#hide5").slideUp("fast");	//Slide Up Effect (BFBC2/MOH Specific Settings)
 		}
 	});
+	
+	$("#parser").change(function(){
+		if ($(this).val() == "bf3") {
+			$("#hide13").slideDown("fast"); //Slide Down Effect (BF3 Specific Settings)
+		} else {
+			$("#hide13").slideUp("fast");	//Slide Up Effect (BF3 Specific Settings)
+		}
+	});
 
 	$("#parser").change(function(){
-		if ($(this).val() == "bfbc2" || $(this).val() == "moh") {
+		if ($(this).val() == "bfbc2" || $(this).val() == "moh" || $(this).val() == "bf3") {
 			$("#hide6").slideDown("fast"); //Slide Down Effect (Rcon Port & Timeout)
 			$("#hide9").slideUp("fast");	//Slide Up Effect (Stats Plugin)
 			$("#hide1").slideUp("fast");	//Slide Up Effect (Game Log Local Path)
 			$("#hide2").slideUp("fast");	//Slide Up Effect (FTP Information)
-			if ($(this).val() == "bfbc2" || $(this).val() == "moh")
+			if ($(this).val() == "bfbc2" || $(this).val() == "moh" || $(this).val() == "bf3")
 				$("#hide7").slideUp("fast");	//Slide Up Effect (Game Log File Selection)
 				$("#hide8").slideUp("fast");	//Slide Up Effect (Team Kill Plugin)
 				$("#hide10").slideUp("fast");	//Slide Up Effect (Punkbuster Plugin)

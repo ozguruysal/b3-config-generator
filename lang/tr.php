@@ -83,13 +83,20 @@ $LANG['DB_NAME_TIP'] = "B3 veritabanı ismini girin.";
 
 
 /**********************************************************************************
- * BFBC2/MOH SPECIFIC SETTINGS
+ * BFBC2/BF3/MOH SPECIFIC SETTINGS
  **********************************************************************************/
 $LANG['BFBC2_MOH'] = "BFBC2/MOH Ayarları:";
 $LANG['BFBC2_MOH_TIP'] = "BFBC2/MOH ile ilgili ayarlamaları yapın";
 $LANG['MAX_SAY_LINE'] = "Konuşma satırındaki maksimum karakter sayısı:";
 $LANG['MAX_SAY_LINE_TIP'] = "Oyun içi konuşma satırlarında izin vermek istediğiniz karakter sayısı. (maksimum uzunluk 100 karakterdir).";
-
+$LANG['BF3'] = "BF3 Specific Settings";
+$LANG['BF3_TIP'] = "Configure BF3 specific settings";
+$LANG['MESSAGE_DELAY'] = "Message Delay:";
+$LANG['MESSAGE_DELAY_TIP'] = "The delay (in second) to wait between two messages";
+$LANG['BIG_B3_PRIVATE_RESPONSES'] = "Big B3 Private Responses:";
+$LANG['BIG_B3_PRIVATE_RESPONSES_TIP'] = "if on, then all private message sent by B3 will be displayed as a big message on screen";
+$LANG['BIG_MSG_DURATION'] = "Big Message Duration"; 
+$LANG['BIG_MSG_DURATION_TIP'] = "For how many seconds big messages are displayed?";
 
 /**********************************************************************************
  * GAME SERVER SETTINGS
@@ -202,5 +209,5 @@ $LANG['PRIVACY_STATEMENT'] = "Gizlilik Bildirimi";
 $LANG['OUR_PRIVACY_STATEMENT'] = "Gizlilik Bildirimi";
 $LANG['CLOSE'] = "Kapat";
 $LANG['PRESS_ESC'] = " (veya ESC veya kutucuğun dışına tıklayın)";
-
+$LANG['SELECT_OPTION'] = "Please Select";
 ?>

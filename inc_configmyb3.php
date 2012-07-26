@@ -20,14 +20,27 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-$version = '1.5';
-$b3_version = '1.5';
+//Set to 1 for debugging
+$debug = 0;
+
+if($debug == 0)
+{
+  error_reporting(0);
+}
+elseif($debug == 1)
+{
+  error_reporting(E_ALL);
+}
+
+$version = '1.6';
+$b3_version = '1.8';
 
 function select_your_game()
 {
   //list of available parsers
   $parsers = array ( 
                      "bfbc2"     => "Battlefield Bad Company 2",
+                     "bf3"       => "Battlefield 3",
                      "cod"       => "Call of Duty",
                      "cod2"      => "Call of Duty 2",
                      "cod4"      => "Call of Duty 4",
@@ -66,12 +79,12 @@ function select_log_level()
     echo '<option value="'.$log.'">'.$logdesc.'</option>' . "\n";
 }
 
-function select_pbsettings()
+function get_switch()
 {
-  $pbsettings = array ("on", "off");
+  $options = array ("on", "off");
 
-  foreach ($pbsettings as $pb)
-    echo '<option value="'.$pb.'">'.$pb.'</option>' . "\n";
+  foreach ($options as $option)
+    echo '<option value="'.$option.'">'.$option.'</option>' . "\n";
 }
 
 function select_autodoc_type()
@@ -96,11 +109,15 @@ function generate_b3config_xml()
   {
     $game_log = $game_log_local;
   }
-  elseif ($game_log == 'ftp')
+  elseif($game_log == 'ftp')
   {
     $game_log_ftpadr = explode("//", $game_log_ftpadr);
     $game_log = $game_log_ftpadr[0].'//'.$game_log_ftpusr.':'.$game_log_ftppas.'@'.$game_log_ftpadr[1];
-  } 
+  }
+  elseif($parser == 'cod7')
+  {
+    $game_log = $game_log_url;
+  }
 
   //what is our autodoc file location?
   if($autodoc == 'locala')
@@ -128,10 +145,16 @@ function generate_b3config_xml()
                                           "logfile" => $logfile
                                         ),
                           "bfbc2"     => array(
-                                          "max_say_line_length" => $max_say_line_length    //bfbc2
+                                          "max_say_line_length" => $max_say_line_length
                                         ),
                           "moh"       => array(
-                                          "max_say_line_length" => $max_say_line_length    //moh
+                                          "max_say_line_length" => $max_say_line_length
+                                        ),
+                          "bf3"       => array (
+                                          "max_say_line_length" => $max_say_line_length,
+                                          "message_delay" => $message_delay,
+                                          "big_b3_private_responses" => $big_b3_private_responses,
+                                          "big_msg_duration" => $big_msg_duration
                                         ),
                           "server"    => array (
                                           "rcon_password" => $rcon_password,
@@ -176,12 +199,13 @@ function generate_b3config_xml()
                                         )
                         );
 
-  //destroy bfbc2 and moh specific variables
-  if($parser != 'bfbc2' && $parser != 'moh')
+  //destroy bfbc2, bf3 and moh specific variables
+  if($parser != 'bfbc2' && $parser != 'moh' && $parser != 'bf3')
   {
     unset(
           $b3_xml_input['bfbc2'],
           $b3_xml_input['moh'],
+          $b3_xml_input['bf3'],
           $b3_xml_input['server']['rcon_port'],
           $b3_xml_input['server']['timeout']
          );
@@ -193,6 +217,20 @@ function generate_b3config_xml()
     unset(
           $b3_xml_input['server']['game_log'],
           $b3_xml_input['moh'],
+          $b3_xml_input['bf3'],
+          $b3_xml_input['plugins_s']['tk'],
+          $b3_xml_input['plugins_s']['stats'],
+          $b3_xml_input['plugins_s']['punkbuster']
+         );
+  }
+  
+  //destroy non bf3 variables
+  if($parser == 'bf3')
+  {
+    unset(
+          $b3_xml_input['server']['game_log'],
+          $b3_xml_input['moh'],
+          $b3_xml_input['bfbc2'],
           $b3_xml_input['plugins_s']['tk'],
           $b3_xml_input['plugins_s']['stats'],
           $b3_xml_input['plugins_s']['punkbuster']
@@ -205,6 +243,7 @@ function generate_b3config_xml()
     unset(
           $b3_xml_input['server']['game_log'],
           $b3_xml_input['bfbc2'],
+          $b3_xml_input['bf3'],
           $b3_xml_input['plugins_s']['tk'],
           $b3_xml_input['plugins_s']['stats'],
           $b3_xml_input['plugins_s']['punkbuster']

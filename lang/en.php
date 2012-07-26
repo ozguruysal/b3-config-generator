@@ -84,13 +84,20 @@ $LANG['DB_NAME_TIP'] = "Enter your B3 database name.";
 
 
 /**********************************************************************************
- * BFBC2/MOH SPECIFIC SETTINGS
+ * BFBC2/BF3/MOH SPECIFIC SETTINGS
  **********************************************************************************/
 $LANG['BFBC2_MOH'] = "BFBC2/MOH Specific Settings:";
 $LANG['BFBC2_MOH_TIP'] = "Configure BFBC2/MOH specific settings";
 $LANG['MAX_SAY_LINE'] = "Max Say Line Length:";
 $LANG['MAX_SAY_LINE_TIP'] = "How long do you want the lines to be restricted to in the chat zone. (maximum length is 100).";
-
+$LANG['BF3'] = "BF3 Specific Settings";
+$LANG['BF3_TIP'] = "Configure BF3 specific settings";
+$LANG['MESSAGE_DELAY'] = "Message Delay:";
+$LANG['MESSAGE_DELAY_TIP'] = "The delay (in second) to wait between two messages";
+$LANG['BIG_B3_PRIVATE_RESPONSES'] = "Big B3 Private Responses:";
+$LANG['BIG_B3_PRIVATE_RESPONSES_TIP'] = "if on, then all private message sent by B3 will be displayed as a big message on screen";
+$LANG['BIG_MSG_DURATION'] = "Big Message Duration"; 
+$LANG['BIG_MSG_DURATION_TIP'] = "For how many seconds big messages are displayed?";
 
 /**********************************************************************************
  * GAME SERVER SETTINGS
@@ -203,5 +210,6 @@ $LANG['PRIVACY_STATEMENT'] = "Privacy Statement";
 $LANG['OUR_PRIVACY_STATEMENT'] = "Our Privacy Statement";
 $LANG['CLOSE'] = "Close";
 $LANG['PRESS_ESC'] = "(or press ESC or click the overlay)";
+$LANG['SELECT_OPTION'] = "Please Select";
 
 ?>
