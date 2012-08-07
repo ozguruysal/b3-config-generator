@@ -1,196 +1,175 @@
-body {
-background:url("../img/bg.jpg") no-repeat -300px 250px;
-/*background-color: #FFF;*/
-margin:0px;
+html, body {
+	background: none repeat scroll 0 0 #F9F9F9;
+	height: 100%;
+	margin:0px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size:10pt;
+}
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+a {
+	color:#666;
+}
+a:hover {
+	text-decoration:none;
+}
+img {
+	border:none;
+}
+#wrap {
+	min-height: 100%;
+}
+#main {
+	overflow:auto;
+	padding-bottom: 40px; /* must be same height as the footer */
 }
 .header {
-	background-color:#222;
-	margin-bottom:20px;
-	width:100%;
+	background:url(../img/header-bg.png) repeat-x scroll 0 0 #6D6E6D;
 	height:150px;
-	border-bottom: 10px solid #C1930B;
-	position:relative;
-	z-index:0;
+	border-bottom: 10px solid #ccc;
+margin-bottom: 30px;
 }
-
 .b3logo  {
-	background:url("../img/b3_logo.png") no-repeat scroll left top transparent;
-	height:150px;
-	left:0;
-	position:absolute;
-	top:0px;
-	width:350px;
-	z-index:1;
+	height: 108px;
+	left: 25px;
+	position: relative;
+	top: 23px;
+	width: 404px;
 }
-
-.header_right  {
-	background:url("../img/header_right.png") no-repeat scroll left top transparent;
-	height:150px;
-	right:0;
-	position:absolute;
-	top:0px;
-	width:350px;
-	z-index:1;
-}
-
 .header_text {
-	font-family: "Trebuchet MS";
-	font-size:200%;
-	font-weight:bold;
-	color:#FFF;
-	position:absolute;
-	text-align:center;
-	width:100%;
-	top:50px;
-	z-index:2;
+	color: #FFFFFF;
+	font-size: 14pt;
+	margin-right: 30px;
+	text-align: right;
 }
-
-.header_note {
-	font-family: "Trebuchet MS";
-	font-size:75%;
-	font-weight:bold;
-	color:#FFF;
-	position:absolute;
-	text-align:center;
-	width:100%;
-	top:90px;
-	z-index:2;
-}
-
-.version {
-	font-family: "Trebuchet MS";
-	font-size:75%;
-	font-weight:bold;
-	color:#FFF;
-	position:absolute;
-	right:20px;
-	text-align:right;
-	top:130px;
-	z-index:2;
-}
-
 .footer {
 	background:#666;
-	margin-top:20px;
+	clear:both;
+	margin-top:-44px; /* negative value of (footer height + border width) */
 	width:100%;
 	height:40px;
-	border-top: 4px solid #C1930B;
+	border-top: 4px solid #999;
 	position:relative;
 }
-
 .footer_text {
 	font-family:Verdana;
 	font-size:8pt;
 	color:#FFF;
-	padding:10px;
+	padding:13px;
 }
-
 .footer_text a {
 	font-family:Verdana;
 	color:#FFF;
 	text-decoration:none;
 }
-
 .footer_text a:hover {
 	text-decoration:underline;
 }
-
 .copyright {
 	font-family:Verdana;
 	color:#FFF;
 	position:absolute;
 	right:15px;
 }
-
-.validator_logo {
-	position:absolute;
-	left:15px;
-	bottom:55px;
+.plugin_label {
+	cursor:pointer;
 }
-
-.validator_logo_css {
-	position:absolute;
-	left:108px;
-	bottom:55px;
+#buttons {
+	padding:10px 15px 20px 0;
 }
-
-#b3 input {
-	padding: 5px;
+#fieldbox_index {
+	background: none repeat scroll 0 0 #F3F3F3;
+	border: 1px solid #E5E5E5;
+	margin: 10px;
+	padding: 15px;
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+}
+#fieldbox {
+	background: none repeat scroll 0 0 #F3F3F3;
+	border: 1px solid #E5E5E5;
+	margin: 10px;
+	padding: 15px;
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+}
+#b3 input, textarea { 
+	background: #FFF;
+	padding: 9px;
 	border: solid 1px #E5E5E5;
-	height: 15px;
-	font-size: 10pt;
-	font-family: "Trebuchet MS";
-	color:#333;
-	/*background: #FFFFFF;*/
-	margin:1px;
+	outline: 0;
+	font: normal 9pt/100% Verdana, Tahoma, sans-serif;
+	width: 330px;
+	margin:3px;
+	color: #666666;
 }
-
-#b3 input:focus {
-	background: #fef9ec;
-	border: solid 1px #c9a744; /*#C1930B;*/
+#b3 textarea { 
+	width: 400px;
+	max-width: 400px;
+	height: 150px;
+	line-height: 150%;
 }
-
-#b3 button{
-	margin-left:10px;
-	width:120px;
-	height:30px;
-	text-align:center;
-	line-height:10px;
-	color:#333;
-	font-size:11px;
-	font-weight:bold;
+#b3 input:hover, textarea:hover, select:hover,
+#b3 input:focus, textarea:focus { 
+	border-color: #C9C9C9; 
+	box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
 }
-
-#b3 .checkbox-1 {
-	border: none;
-	background:#c8cfd5;
-}
-
-#b3 .checkbox_text {
-	display: inline-block; 
-	width:150px; 
-	background:#c8cfd5;
-	padding:1px;
-	font-size:10pt;
-}
-
-#b3 label {
-	font-family: "Trebuchet MS";
-	font-size: 10pt;
-	font-weight:bold;
-	color:#555;
-	display:inline-block;
-	width:150px;
-	padding:5px;
-	margin:1px;
-	background: #c8cfd5;
-}
-
 #b3 select {
-	font-family: "Trebuchet MS";
-	color: #333;
-	border: 1px solid #CFCFCF;
+	background: #FFF;
+	padding: 9px;
+	border: solid 1px #E5E5E5;
+	outline: 0;
+	font: normal 9pt/100% Verdana, Tahoma, sans-serif;
+	width: 350px;
+	margin:3px;
+	color: #666666;
 }
-
-#b3 .checkbox-1 {
-	border: none;
+#b3 button{
+	cursor:pointer;
 }
-
-#b3conf {
-	font-family: "Trebuchet MS";
-	font-size: 10pt;
+#b3 .checkbox_text {
+	border: 0 solid #DEDEDE;
+	color: #666666;
+	display: inline-block;
+	font-size: 9pt;
+	padding: 9px;
+	text-shadow: 1px 1px #FFFFFF;
+	width: 170px;
 }
-
+#b3 .checkbox_text input {
+	background: none repeat scroll 0 0 transparent;
+	border: medium none;
+	cursor: pointer;
+	margin-right: 10px;
+	position: relative;
+	top: 2px;
+	width: 13px;
+}
+#b3 label {
+	border: 0 solid #DEDEDE;
+	color: #666666;
+	display: inline-block;
+	font-size: 9pt;
+	padding: 9px 0 0;
+	text-shadow: 1px 1px #FFFFFF;
+	width: 120px;
+}
 #b3conf fieldset {
-	font-size:12pt;
-	border:1px solid #CFCFCF;
-	margin-bottom:15px;
+	border: medium none;
 }
-
 #b3conf #settings {
 	background:url("../img/settings.png") no-repeat right bottom;
 }
-
 #b3conf #database {
 	background:url("../img/database.png") no-repeat right bottom;
 }
@@ -198,50 +177,71 @@ margin:0px;
 #b3conf #bfbc2 {
 	background:url("../img/bfbc2.png") no-repeat right bottom;
 }
-
 #b3conf #gameserver {
 	background:url("../img/gameserver.png") no-repeat right bottom;
 }
-
 #b3conf #autodocimg {
 	background:url("../img/autodoc.png") no-repeat right bottom;
 }
-
 #b3conf #messages {
 	background:url("../img/messages.png") no-repeat right bottom;
 }
-
 #b3conf #builtinplugins {
 	background:url("../img/builtinplugins.png") no-repeat right bottom;
 }
-
 #b3conf #externalplugins {
 	background:url("../img/externalplugins.png") no-repeat right bottom;
 }
-
 #b3conf legend {
-	font-weight:bold;
+	color: #555555;
+	font-size: 12pt;
+	font-weight: bold;
+	padding: 10px 0 0 10px;
 }
-
 #b3conf dl dt {
-	padding:5px;
-	margin:-15px 0px 5px 10px;
-	font-size:8pt;
+	border-bottom: 1px solid #D9D9D9;
+	color: #777777;
+	font-size: 9pt;
+	margin: -12px 10px 25px 5px;
+	padding: 10px 0 10px 5px;
+	text-shadow: 1px 1px #FFFFFF;
+	line-height: 15pt;
 }
-#b3 .hide
-{
+#b3 .hide {
 	display:none;
 }
-.text{
+
+/* Plugin Download Buttons */
+.plugin-dl {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6) );
+	background:-moz-linear-gradient( center top, #ffffff 5%, #f6f6f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6');
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777;
+	font-family:arial;
+	font-size:8pt;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}.plugin-dl:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff) );
+	background:-moz-linear-gradient( center top, #f6f6f6 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff');
+	background-color:#f6f6f6;
+}.plugin-dl:active {
 	position:relative;
-	z-index:10;
+	top:1px;
 }
-.shadow{
-	color: #000;
-	position:absolute;
-	z-index:5;
-	margin:3px 0px 0px 3px;
-}
+
 /* simple css-based tooltip */
 .tooltip {
 	background:url('../img/info.png') no-repeat 0px 3px;

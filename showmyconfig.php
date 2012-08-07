@@ -1,10 +1,8 @@
 <?php
 /**
  * BigBrotherBot Config File Generator
- * Author: Freelander
- * Author URI: http://www.fps-gamer.net
- *
- * Copyright(c)2010 - 2011 Freelander  <mailto:freelander@fps-gamer.net>
+ * Author: Freelander (Özgür Uysal) <freelander@bigbrotherbot.net>
+ * Author URI: http://www.bigbrotherbot.net
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License, version 2, as 
@@ -20,8 +18,6 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-include('inc_configmyb3.php');
+include('configmyb3.php');
 
 generate_b3config_xml();
-
-?>
