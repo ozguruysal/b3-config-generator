@@ -24,8 +24,11 @@ include('functions.php');
 //Get game name
 $game = $_POST['parser'];
 
+//If game is not selected redirect to main page
 if(!$game) {
-    echo 'Please select game!!!';
+    $location = str_replace('form.php', '', $_SERVER['PHP_SELF']);
+    ob_end_clean();
+    header('Location:' . $location );
     return;
 }
 include('data/' . $game . '.php');
