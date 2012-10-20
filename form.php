@@ -22,16 +22,21 @@ include('data/common_settings.php');
 include('functions.php');
 
 //Get game name
-$game = $_POST['parser'];
+$game = null;
+if (array_key_exists('parser', $_GET)) {
+    $game = $_GET['parser'];
+}
 
-//If game is not selected redirect to main page
-if(!$game) {
+$game_data_file = 'data/' . $game . '.php';
+
+//If game is not selected or does not exists redirect to main page
+if(!$game or !file_exists($game_data_file)) {
     $location = str_replace('form.php', '', $_SERVER['PHP_SELF']);
     ob_end_clean();
     header('Location:' . $location );
     return;
 }
-include('data/' . $game . '.php');
+include($game_data_file);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -87,13 +92,11 @@ include('data/' . $game . '.php');
           <dl>
             <dt><?php echo _('Fill in your general information'); ?></dt>
             <dd>
-              <span style="display:none;">
-                 <label><?php echo _('Game Parser:'); ?></label>
-                <input type="text" size="28" name="parser" id="parser" value="<?php echo $game;?>" title="<?php echo _('Game you selected. Hit back if this is not correct'); ?>" readonly />
-              </span>
+              <input type="hidden" name="parser" id="parser" value="<?php echo $game;?>" />
               <span>
                  <label><?php echo _('Game:'); ?></label>
-                <input type="text" size="60" name="game_name" id="game_name" value="<?php echo $game_name;?>" title="<?php echo _('Game you selected. Hit back if this is not correct'); ?>" readonly />
+                <input type="text" name="game_name" id="game_name" value="<?php echo $game_name;?>" title="<?php echo _('Game you selected.'); ?>" readonly />
+                <button type=button onclick="document.location='?parser='"><?php echo _('change'); ?></button>
               </span><br />
             <?php
             get_section($b3);
