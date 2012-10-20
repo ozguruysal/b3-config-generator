@@ -86,7 +86,7 @@ include($game_data_file);
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="settings">
         <legend><?php echo _('General Settings:'); ?></legend>
           <dl>
@@ -114,7 +114,7 @@ include($game_data_file);
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="database">
         <legend><?php echo _('Database Settings:'); ?></legend>
           <dl>
@@ -139,7 +139,7 @@ include($game_data_file);
   <!-- Game Specific Settings Starts -->
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="<?php echo $game; ?>">
         <legend><?php echo _($game_name . ' Specific Settings:'); ?></legend>
           <dl>
@@ -163,7 +163,7 @@ include($game_data_file);
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="gameserver">
         <legend><?php echo _('Game Server Settings:'); ?></legend>
           <dl>
@@ -185,7 +185,7 @@ include($game_data_file);
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="autodocimg">
         <legend><?php echo _('Autodoc Settings:'); ?></legend>
           <dl>
@@ -207,7 +207,7 @@ include($game_data_file);
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="">
         <legend><?php echo _('Update Settings:'); ?></legend>
           <dl>
@@ -229,7 +229,7 @@ include($game_data_file);
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="messages">
         <legend><?php echo _('Messages:'); ?></legend>
           <dl>
@@ -251,7 +251,7 @@ include($game_data_file);
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="externalplugins_dir">
         <legend><?php echo _('External Plugins Directory:'); ?></legend>
           <dl>
@@ -278,7 +278,7 @@ include($game_data_file);
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="builtinplugins">
         <legend><?php echo _('Built-in Plugins:'); ?></legend>
           <dl>
@@ -305,7 +305,7 @@ include($game_data_file);
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="externalplugins">
         <legend><?php echo _('External Plugins:'); ?></legend>
           <dl>
@@ -332,8 +332,8 @@ include($game_data_file);
   
   <tr>
     <td>
-    <div id="fieldbox">
-      <fieldset id="preserve_tips">
+    <div class="fieldbox">
+      <fieldset>
         <legend><?php echo _('Preserve Tips:'); ?></legend>
           <dl>
             <dt>
