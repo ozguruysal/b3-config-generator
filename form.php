@@ -312,7 +312,7 @@ include($game_data_file);
             <dt>
               <?php echo _('Choose external plugins you want to use and enter their paths. <strong>Note that you must download and install them before you run B3</strong>'); ?><br />
               <span style="margin-top:10px; display:inline-block; border:1px dotted #CCC; width:400px; padding:5px;">
-              <?php echo _('@b3/extplugins : the folder containing this config file'); ?><br />
+              <?php echo _('@b3/extplugins : the folder containing the external plugins'); ?><br />
               </span>
             </dt>
             <dd>
