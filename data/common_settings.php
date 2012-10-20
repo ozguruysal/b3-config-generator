@@ -30,7 +30,8 @@ $b3 = array(
             'formtype'   => 'text',
             'title'      => _('Bot Name:'), 
             'tooltip'    => _('Name of the bot.'), 
-            'default'    => 'b3'
+            'default'    => 'b3',
+            'always_hide'=> true
         ),
         'bot_prefix' => array (
             'formtype'   => 'text',
