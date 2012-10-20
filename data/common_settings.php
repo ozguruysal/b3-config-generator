@@ -71,8 +71,8 @@ $b3 = array(
         'logfile' => array (
             'formtype' => 'text',
             'title'      => _('B3 Log File:'), 
-            'tooltip'    => _('Name and path of the logfile the bot will generate.'), 
-            'default'    => 'b3.log'
+            'tooltip'    => _('Name and path of the logfile the bot will generate.<br/>@conf : the folder containing this config file'),
+            'default'    => '@conf/b3.log'
         ),
 );
 
@@ -140,8 +140,8 @@ $autodoc = array (
                     'autodoc_local' => array (
                         'formtype'   => 'text',
                         'title'      => _('Local Path:'),
-                        'tooltip'    => _('Enter the full path and file name.'),
-                        'default'    => 'b3_doc.html'
+                        'tooltip'    => _('Enter the full path and file name.<br/>@conf : the folder containing this config file'),
+                        'default'    => '@conf/b3_doc.html'
                     )
                 ),
                 'ftpa' => array (
