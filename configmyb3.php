@@ -90,7 +90,7 @@ function generate_b3config_xml() {
   $b3['database'] = $database;  
   
   //Prepare the XML document
-  $doc = new DOMDocument();
+  $doc = new DOMDocument('1.0', 'UTF-8');
   $doc->formatOutput = true;
   
   $createdby = 'Created by BigBrotherBot Config File Generator at http://config.bigbrotherbot.net (' . date("d M Y - D H:i:s T", time()) . ')';
