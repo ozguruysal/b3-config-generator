@@ -216,6 +216,13 @@ $external_plugins = array (
         'default'    => '@b3/extplugins/conf/banlist.xml',
         'url'        => 'http://forum.bigbrotherbot.net/downloads/?sa=downfile&amp;id=6'
     ),
+    'vacban' => array (
+        'formtype'   => 'plugin',
+        'title'      => 'VAC ban',
+        'tooltip'    => "Auto-kick any player who's ever been caught cheating with any VAC protected games",
+        'default'    => '@b3/extplugins/conf/plugin_vacban.ini',
+        'url'        => 'http://forum.bigbrotherbot.net/downloads/?sa=downfile&amp;id=145'
+    ),
     'chatlogger' => array (
         'formtype'   => 'plugin',
         'title'      => 'Chatlogger',
