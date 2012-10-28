@@ -22,16 +22,21 @@ include('data/common_settings.php');
 include('functions.php');
 
 //Get game name
-$game = $_POST['parser'];
+$game = null;
+if (array_key_exists('parser', $_GET)) {
+    $game = $_GET['parser'];
+}
 
-//If game is not selected redirect to main page
-if(!$game) {
+$game_data_file = 'data/' . $game . '.php';
+
+//If game is not selected or does not exists redirect to main page
+if(!$game or !file_exists($game_data_file)) {
     $location = str_replace('form.php', '', $_SERVER['PHP_SELF']);
     ob_end_clean();
     header('Location:' . $location );
     return;
 }
-include('data/' . $game . '.php');
+include($game_data_file);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -81,19 +86,17 @@ include('data/' . $game . '.php');
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="settings">
         <legend><?php echo _('General Settings:'); ?></legend>
           <dl>
             <dt><?php echo _('Fill in your general information'); ?></dt>
             <dd>
-              <span style="display:none;">
-                 <label><?php echo _('Game Parser:'); ?></label>
-                <input type="text" size="28" name="parser" id="parser" value="<?php echo $game;?>" title="<?php echo _('Game you selected. Hit back if this is not correct'); ?>" readonly />
-              </span>
+              <input type="hidden" name="parser" id="parser" value="<?php echo $game;?>" />
               <span>
                  <label><?php echo _('Game:'); ?></label>
-                <input type="text" size="60" name="game_name" id="game_name" value="<?php echo $game_name;?>" title="<?php echo _('Game you selected. Hit back if this is not correct'); ?>" readonly />
+                <input type="text" name="game_name" id="game_name" value="<?php echo $game_name;?>" title="<?php echo _('Game you selected.'); ?>" readonly />
+                <button type=button onclick="document.location='?parser='"><?php echo _('change'); ?></button>
               </span><br />
             <?php
             get_section($b3);
@@ -111,7 +114,7 @@ include('data/' . $game . '.php');
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="database">
         <legend><?php echo _('Database Settings:'); ?></legend>
           <dl>
@@ -136,7 +139,7 @@ include('data/' . $game . '.php');
   <!-- Game Specific Settings Starts -->
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="<?php echo $game; ?>">
         <legend><?php echo _($game_name . ' Specific Settings:'); ?></legend>
           <dl>
@@ -160,7 +163,7 @@ include('data/' . $game . '.php');
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="gameserver">
         <legend><?php echo _('Game Server Settings:'); ?></legend>
           <dl>
@@ -182,7 +185,7 @@ include('data/' . $game . '.php');
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="autodocimg">
         <legend><?php echo _('Autodoc Settings:'); ?></legend>
           <dl>
@@ -204,7 +207,7 @@ include('data/' . $game . '.php');
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="">
         <legend><?php echo _('Update Settings:'); ?></legend>
           <dl>
@@ -226,7 +229,7 @@ include('data/' . $game . '.php');
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="messages">
         <legend><?php echo _('Messages:'); ?></legend>
           <dl>
@@ -248,7 +251,7 @@ include('data/' . $game . '.php');
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="externalplugins_dir">
         <legend><?php echo _('External Plugins Directory:'); ?></legend>
           <dl>
@@ -275,7 +278,7 @@ include('data/' . $game . '.php');
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="builtinplugins">
         <legend><?php echo _('Built-in Plugins:'); ?></legend>
           <dl>
@@ -302,14 +305,14 @@ include('data/' . $game . '.php');
   
   <tr>
     <td>
-    <div id="fieldbox">
+    <div class="fieldbox">
       <fieldset id="externalplugins">
         <legend><?php echo _('External Plugins:'); ?></legend>
           <dl>
             <dt>
               <?php echo _('Choose external plugins you want to use and enter their paths. <strong>Note that you must download and install them before you run B3</strong>'); ?><br />
               <span style="margin-top:10px; display:inline-block; border:1px dotted #CCC; width:400px; padding:5px;">
-              <?php echo _('@b3/extplugins : the folder containing this config file'); ?><br />
+              <?php echo _('@b3/extplugins : the folder containing the external plugins'); ?><br />
               </span>
             </dt>
             <dd>
@@ -329,8 +332,8 @@ include('data/' . $game . '.php');
   
   <tr>
     <td>
-    <div id="fieldbox">
-      <fieldset id="preserve_tips">
+    <div class="fieldbox">
+      <fieldset>
         <legend><?php echo _('Preserve Tips:'); ?></legend>
           <dl>
             <dt>
