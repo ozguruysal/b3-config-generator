@@ -122,9 +122,10 @@ function get_section($section) {
     $title    = $section[$key]['title'];
     $tooltip  = $section[$key]['tooltip'];
     $default  = $section[$key]['default'];
+    $hide     = (is_array($section[$key]) && array_key_exists('always_hide', $section[$key])) ? $section[$key]['always_hide'] : false;
   
     if($formtype == 'text') {
-      get_textbox_field($section, $title, $id, $default, $tooltip);
+      get_textbox_field($section, $title, $id, $default, $tooltip, $hide);
     } 
     elseif($formtype == 'select') {
       get_select_field ($section, $title, $id, $default, $tooltip);
@@ -145,16 +146,20 @@ function get_section($section) {
  * @param string $id name and id field of <input> tag
  * @param string $default default value to be displayed in text box
  * @param string $tooltip title field in <input> tag that's used as tooltip
+ * @param boolean $always_hide if true the field will be hidden
  */
-function get_textbox_field($section, $title, $id, $default, $tooltip) {
+function get_textbox_field($section, $title, $id, $default, $tooltip, $always_hide) {
   if(isset($section[$id]['size'])){
     $size = $section[$id]['size'];
   }
   ?>
-  <span>
+    <span <?php if ($always_hide === true) echo 'style="display: none;"'; ?>>
       <label><?php echo $title ?></label>
       <input type="text" <?php if(isset($size)) echo 'style="width:'.$size.';"'; ?> name="<?php echo $id; ?>" id="<?php echo $id; ?>" value="<?php echo $default;?>" title="<?php echo $tooltip; ?>" />
-    </span><br />
+    </span>
+    <?php if ($always_hide !== true): ?>
+        <br />
+    <?php endif; ?>
   <?php
 }
  

@@ -58,7 +58,7 @@
 
 <!-- Form Starts -->
 
-<form id="b3" method="post" action="form.php">
+<form id="b3" method="get" action="form.php">
 <table width="880px" border="0" cellpadding="0" cellspacing="0" id="b3conf" style="margin-left:auto; margin-right:auto;">
 <tbody>
 

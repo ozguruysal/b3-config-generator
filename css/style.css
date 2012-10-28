@@ -92,7 +92,7 @@ margin-bottom: 30px;
 	-moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
 	-webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
 }
-#fieldbox {
+.fieldbox {
 	background: none repeat scroll 0 0 #F3F3F3;
 	border: 1px solid #E5E5E5;
 	margin: 10px;
