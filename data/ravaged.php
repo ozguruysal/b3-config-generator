@@ -216,12 +216,19 @@ $external_plugins = array (
         'default'    => '@b3/extplugins/conf/banlist.xml',
         'url'        => 'http://forum.bigbrotherbot.net/downloads/?sa=downfile&amp;id=6'
     ),
+    'vacban' => array (
+        'formtype'   => 'plugin',
+        'title'      => 'VAC ban',
+        'tooltip'    => "Auto-kick any player who's ever been caught cheating with any VAC protected games",
+        'default'    => '@b3/extplugins/conf/plugin_vacban.ini',
+        'url'        => 'http://forum.bigbrotherbot.net/downloads/?sa=downfile&amp;id=145'
+    ),
     'chatlogger' => array (
         'formtype'   => 'plugin',
         'title'      => 'Chatlogger',
         'tooltip'    => 'This plugin logs to database and/or file all clients\' messages (chat, team chat, private chat).',
         'default'    => '@b3/extplugins/conf/plugin_chatlogger.xml',
-        'url'        => 'http://github.com/courgette/b3-plugin-chatlogger/zipball/v1.0'
+        'url'        => 'http://forum.bigbrotherbot.net/downloads/?sa=downfile&id=7'
     ),
     'xlrstats' => array (
         'formtype'   => 'plugin',

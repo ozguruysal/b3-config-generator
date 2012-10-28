@@ -219,7 +219,7 @@ $external_plugins = array (
         'title'      => 'Chatlogger',
         'tooltip'    => 'This plugin logs to database and/or file all clients\' messages (chat, team chat, private chat).',
         'default'    => '@b3/extplugins/conf/plugin_chatlogger.xml',
-        'url'        => 'http://github.com/courgette/b3-plugin-chatlogger/zipball/v1.0'
+        'url'        => 'http://forum.bigbrotherbot.net/downloads/?sa=downfile&id=7'
     ),
     'xlrstats' => array (
         'formtype'   => 'plugin',

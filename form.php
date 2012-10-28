@@ -96,7 +96,7 @@ include($game_data_file);
               <span>
                  <label><?php echo _('Game:'); ?></label>
                 <input type="text" name="game_name" id="game_name" value="<?php echo $game_name;?>" title="<?php echo _('Game you selected.'); ?>" readonly />
-                <button type=button onclick="document.location='?parser='"><?php echo _('change'); ?></button>
+                <a class="plugin-dl" href="?parser="><?php echo _('Change'); ?></a>
               </span><br />
             <?php
             get_section($b3);
