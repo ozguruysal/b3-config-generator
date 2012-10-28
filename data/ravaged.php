@@ -56,9 +56,9 @@ $server = array (
     ),
     'port' => array (
             'formtype'   => 'text',
-            'title'      => _('Server Port:'),
-            'tooltip'    => _('Enter your game server\'s port.'),
-            'default'    => '8000'
+            'title'      => _('Server Query Port:'),
+            'tooltip'    => _('Enter your game server\'s Steam Query port. (see SteamQueryPort in your Ravaged server config file)'),
+            'default'    => '27015'
     ),
     'rcon_ip' => array (
         'formtype'   => 'text',
@@ -69,13 +69,13 @@ $server = array (
     'rcon_port' => array (
             'formtype'   => 'text',
             'title'      => _('Rcon Port:'),
-            'tooltip'    => _('Enter your game server\'s rcon (admin) port.'),
+            'tooltip'    => _('Enter your game server\'s rcon (admin) port. (see RConPort in your Ravaged server config file)'),
             'default'    => '13550'
     ),
     'rcon_password' => array (
             'formtype'   => 'text',
             'title'      => _('Rcon Password:'),
-            'tooltip'    => _('Enter your rcon password.'),
+            'tooltip'    => _('Enter your rcon password. (see AdminPassword in your Ravaged server config file)'),
             'default'    => 'MYrCOnPaSS'
     )
 );
