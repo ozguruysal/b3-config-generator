@@ -22,6 +22,7 @@
  * Generates a dropdown list with available games
  */
 function game_picker() {
+  global $game_name;
   ?>
   <select name="parser" id="parser" onchange="form.submit()">
     <option value="0" disabled="disabled" selected="selected"><?php echo _('Please Select'); ?></option>
@@ -117,6 +118,7 @@ function get_section($section) {
 
   foreach($section as $key=>$value) {
 
+    if (!is_array($section[$key])) continue;
     $id = $key;
     $formtype = $section[$key]['formtype'];
     $title    = $section[$key]['title'];
