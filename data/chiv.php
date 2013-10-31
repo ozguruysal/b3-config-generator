@@ -157,13 +157,13 @@ $builtin_plugins = array (
         'formtype'   => 'plugin',
         'title'      => 'Spam Control',
         'tooltip'    => _('Warns players who spams the in game chat'),
-        'default'    => '@conf/plugin_spamcontrol.xml'
+        'default'    => '@conf/plugin_spamcontrol.ini'
     ),
     'admin'   => array (
         'formtype'   => 'plugin',
         'title'      => 'Admin',
         'tooltip'    => _('This plugin provides main B3 functionalities.'),
-        'default'    => '@conf/plugin_admin.xml',
+        'default'    => '@conf/plugin_admin.ini',
         'checked'    => True,
         'disabled'   => True 
     ),
@@ -171,19 +171,19 @@ $builtin_plugins = array (
         'formtype'   => 'plugin',
         'title'      => 'Team Kill',
         'tooltip'    => _('Punishes team killers'),
-        'default'    => '@conf/plugin_tk.xml'
+        'default'    => '@conf/plugin_tk.ini'
     ),
     'stats'   => array (
         'formtype'   => 'plugin',
         'title'      => 'Stats',
         'tooltip'    => _('Displays round based stats'),
-        'default'    => '@conf/plugin_stats.xml'
+        'default'    => '@conf/plugin_stats.ini'
     ),
     'pingwatch'   => array (
         'formtype'   => 'plugin',
         'title'      => 'Ping Watch',
         'tooltip'    => _('Notifies players with high ping'),
-        'default'    => '@conf/plugin_pingwatch.xml'
+        'default'    => '@conf/plugin_pingwatch.ini'
     ),
     'adv'   => array (
         'formtype'   => 'plugin',
@@ -195,13 +195,13 @@ $builtin_plugins = array (
         'formtype'   => 'plugin',
         'title'      => 'Status',
         'tooltip'    => _('Writes server status to an xml file. This can be used by 3rd party tools to monitor server status.'),
-        'default'    => '@conf/plugin_status.xml'
+        'default'    => '@conf/plugin_status.ini'
     ),
     'welcome'   => array (
         'formtype'   => 'plugin',
         'title'      => 'Welcome',
         'tooltip'    => _('Welcomes players'),
-        'default'    => '@conf/plugin_welcome.xml'
+        'default'    => '@conf/plugin_welcome.ini'
     )
 );
 
