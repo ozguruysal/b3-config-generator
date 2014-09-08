@@ -23,7 +23,7 @@
  */
 
 /*-----------------------------------------------------------------------------*
- * COD7 SETTINGS
+ * CS:GO SETTINGS
  *-----------------------------------------------------------------------------*/
 $game_name = 'Counter-Strike: Global offensive';
 
@@ -38,7 +38,7 @@ $game_specific_settings = False;
 $b3['bot_prefix'] = array (
     'formtype'   => 'text',
     'title'      => _('Bot Prefix:'),
-    'tooltip'    => _('Ingame messages are prefixed with this code, you can use colorcodes.'),
+    'tooltip'    => _('Ingame messages are prefixed with this code.'),
     'default'    => "B3:"
 );
 
