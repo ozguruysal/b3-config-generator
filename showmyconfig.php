@@ -35,7 +35,7 @@ function generate_b3config_ini() {
     $xslt->importStyleSheet(DomDocument::load('b3-main-config-xml2ini.xsl'));
     header('Content-disposition: attachment; filename=b3.ini');
     header('Content-type: text/plain');
-    echo $xslt->transformToXML(DomDocument::loadXML($doc->saveXML()));
+    echo $xslt->transformToXML($doc);
 }
 
 
