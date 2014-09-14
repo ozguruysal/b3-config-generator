@@ -5,7 +5,8 @@ http://www.bigbrotherbot.net
 
 Requirements
 ------------
-PHP5+, DOM extension, XSL  extension
+PHP5+
+PHP extensions: DOM, XSL, gettext
 
 Description
 -----------
