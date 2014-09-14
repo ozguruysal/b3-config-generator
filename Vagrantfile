@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Vagranfile setting up a virtual machine ready to serve the project files on port 80
+# Vagrantfile setting up a virtual machine ready to serve the project files on port 80
 #
 # Requirements
 # ------------
