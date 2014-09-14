@@ -43,7 +43,7 @@ include('data/' . $game . '.php');
 //Are we including comments in config file?
 $preserve_tips = $_POST['preserve_tips'];
 
-function generate_b3config_xml() {
+function get_b3config_xml_document() {
 
   global $game;
   global $b3;
@@ -186,14 +186,7 @@ function generate_b3config_xml() {
       $plugin_atr->appendChild($plugin_atr_text);
     }
   }
-  
-  //echo $doc->saveXML();
-  
-  $doc->save('tmp/b3.xml');
-  header('Content-disposition: attachment; filename=b3.xml');
-  header('Content-type: application/xml');
-  readfile('tmp/b3.xml');
-  unlink('tmp/b3.xml');
-  return;
+
+  return $doc;
   
 }

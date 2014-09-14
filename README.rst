@@ -5,7 +5,7 @@ http://www.bigbrotherbot.net
 
 Requirements
 ------------
-PHP5+ and DOM extension
+PHP5+, DOM extension, XSL  extension
 
 Description
 -----------
@@ -18,7 +18,6 @@ Installation
 ------------
 
 - Upload the folder to your web root.
-- Chmod 'tmp' folder to 777
 - Point your web browser to http://www.example.com/b3-config-generator/
 
 Support
