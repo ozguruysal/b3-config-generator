@@ -38,7 +38,7 @@
 <script src="js/osx.js" type="text/javascript"></script>
 <script src="js/b3.js" type="text/javascript"></script>
 <link rel="shortcut icon" href="img/favicon.ico" />
-<meta name="description" content="BigBrotherBot - Web based b3.xml generator" />
+<meta name="description" content="BigBrotherBot - Web based b3.ini generator" />
 <meta name="keywords" content="bigbrotherbot, b3, config, generator, server administration" />
 <link rel="canonical" href="http://www.bigbrotherbot.net/" />
 
@@ -73,7 +73,7 @@
             <dt style="font-size:11pt; line-height: 16pt; border:none;">
               <span><img style="float:left; margin-right:20px;" src="img/b3-config.png" /></span>
               <span>
-                <?php echo _('Using this tool you can create your main b3 config file (b3.xml) 
+                <?php echo _('Using this tool you can create your main b3 config file (b3.ini)
                 via a user friendly web form. <br />Please read our <a href="#" class="osx">Privacy Statement</a> 
                 first then select your game to start!'); ?><br />
               </span>

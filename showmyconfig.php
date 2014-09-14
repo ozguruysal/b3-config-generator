@@ -20,4 +20,30 @@
 
 include('configmyb3.php');
 
-generate_b3config_xml();
+
+function generate_b3config_xml() {
+    $doc = get_b3config_xml_document();
+    header('Content-disposition: attachment; filename=b3.xml');
+    header('Content-type: text/xml');
+    echo $doc->saveXML();
+}
+
+
+function generate_b3config_ini() {
+    $doc = get_b3config_xml_document();
+    $xslt = new XSLTProcessor;
+    $xslt->importStyleSheet(DomDocument::load('b3-main-config-xml2ini.xsl'));
+    header('Content-disposition: attachment; filename=b3.ini');
+    header('Content-type: text/plain');
+    echo $xslt->transformToXML(DomDocument::loadXML($doc->saveXML()));
+}
+
+
+$config_format = $_POST['config_format'];
+if ($config_format == 'ini') {
+    generate_b3config_ini();
+} elseif ($config_format == 'xml') {
+    generate_b3config_xml();
+} else {
+    throw new Exception('Not implemented (' . $config_format . ')');
+}
