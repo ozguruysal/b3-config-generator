@@ -361,8 +361,8 @@ include($game_data_file);
 
   <tr>
     <td align="right" id="buttons">
-      <button class="plugin-dl" type="submit" id="save_ini" name="save_ini" onclick="$(input[name=config_format]).val('ini')" title="<?php echo _('Download your b3.ini config file for B3 1.10+'); ?>"><?php echo _('Save b3.ini<br>B3 1.10+'); ?></button>
-      <button class="plugin-dl" type="submit" id="save_xml" name="save_xml" onclick="$(input[name=config_format]).val('xml')" title="<?php echo _('Download your b3.xml config file for B3 1.9+'); ?>"><?php echo _('Save b3.xml<br>B3 1.9+'); ?></button>
+      <button class="plugin-dl" type="submit" id="save_ini" name="save_ini" onclick="$('input[name=config_format]').val('ini')" title="<?php echo _('Download your b3.ini config file for B3 1.10+'); ?>"><?php echo _('Save b3.ini<br>B3 1.10+'); ?></button>
+      <button class="plugin-dl" type="submit" id="save_xml" name="save_xml" onclick="$('input[name=config_format]').val('xml')" title="<?php echo _('Download your b3.xml config file for B3 1.9+'); ?>"><?php echo _('Save b3.xml<br>B3 1.9+'); ?></button>
       <button class="plugin-dl" type="reset" id="clear" name="clear" title="<?php echo _('Reset'); ?>"><?php echo _('Reset'); ?></button>
     </td>
   </tr>
