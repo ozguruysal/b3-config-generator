@@ -55,7 +55,7 @@ include($game_data_file);
 <script src="js/osx.js" type="text/javascript"></script>
 <script src="js/b3.js" type="text/javascript"></script>
 <link rel="shortcut icon" href="img/favicon.ico" />
-<meta name="description" content="BigBrotherBot - Web based b3.xml generator" />
+<meta name="description" content="BigBrotherBot - Web based b3.ini generator" />
 <meta name="keywords" content="bigbrotherbot, b3, config, generator, server administration" />
 <link rel="canonical" href="http://www.bigbrotherbot.net/" />
 
@@ -355,12 +355,14 @@ include($game_data_file);
     </div>
     </td>
   </tr>
-  
+
+  <input type="hidden" name="config_format" value="ini"/>
   <!-- /Preserve Tips End -->
 
   <tr>
     <td align="right" id="buttons">
-      <button class="plugin-dl" type="submit" id="save" name="save" title="<?php echo _('Save'); ?>"><?php echo _('Save Config'); ?></button>
+      <button class="plugin-dl" type="submit" id="save_ini" name="save_ini" onclick="$('input[name=config_format]').val('ini')" title="<?php echo _('Download your b3.ini config file for B3 1.10+'); ?>"><?php echo _('Save b3.ini<br>B3 1.10+'); ?></button>
+      <button class="plugin-dl" type="submit" id="save_xml" name="save_xml" onclick="$('input[name=config_format]').val('xml')" title="<?php echo _('Download your b3.xml config file for B3 1.9+'); ?>"><?php echo _('Save b3.xml<br>B3 1.9+'); ?></button>
       <button class="plugin-dl" type="reset" id="clear" name="clear" title="<?php echo _('Reset'); ?>"><?php echo _('Reset'); ?></button>
     </td>
   </tr>
