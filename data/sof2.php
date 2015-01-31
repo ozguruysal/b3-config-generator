@@ -1,7 +1,7 @@
 <?php
 /**
  * BigBrotherBot Config File Generator
- * Author: Courgette <courgette@bigbrotherbot.net>
+ * Author: Freelander (Özgür Uysal) <freelander@bigbrotherbot.net>
  * Author URI: http://www.bigbrotherbot.net
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,42 +23,36 @@
  */
 
 /*-----------------------------------------------------------------------------*
- * CHIV SETTINGS
+ * SOF2 SETTINGS
  *-----------------------------------------------------------------------------*/
-$game_name = 'Chivalry Medieval Warfare';
+$game_name = 'Soldier Of Fortune';
 
 /*******************************************************************************
  * Game Specific Settings
  *******************************************************************************/
 $game_specific_settings = False;
 
-
-/*******************************************************************************
- * B3 Settings
- *******************************************************************************/
-$b3['bot_prefix'] = array (
-    'formtype'   => 'text',
-    'title'      => _('Bot Prefix:'),
-    'tooltip'    => _('Ingame messages are prefixed with this code, you can use colorcodes.'),
-    'default'    => "B3:"
-);
-
-
 /*******************************************************************************
  * Server Settings
  *******************************************************************************/
 $server = array (
+    'rcon_password' => array (
+        'formtype'   => 'text',
+        'title'      => _('Rcon Password:'),
+        'tooltip'    => _('Enter your rcon password.'),
+        'default'    => 'MYrCOnPaSS'
+    ),
+    'port' => array (
+        'formtype'   => 'text',
+        'title'      => _('Server Port:'),
+        'tooltip'    => _('Enter your game server\'s rcon (admin) port.'),
+        'default'    => '28960'
+    ),
     'public_ip' => array (
         'formtype'   => 'text',
         'title'      => _('Public IP:'),
         'tooltip'    => _('Enter your game server\'s public IP.'),
-        'default'    => $_SERVER['REMOTE_ADDR']
-    ),
-    'port' => array (
-        'formtype'   => 'text',
-        'title'      => _('Server Query Port:'),
-        'tooltip'    => _('Enter your game server\'s query port.'),
-        'default'    => '27015'
+        'default'    => '255.255.255.255'
     ),
     'rcon_ip' => array (
         'formtype'   => 'text',
@@ -66,86 +60,73 @@ $server = array (
         'tooltip'    => _('Enter your game server\'s rcon IP.'),
         'default'    => '127.0.0.1'
     ),
-    'rcon_port' => array (
+    'delay' => array (
         'formtype'   => 'text',
-        'title'      => _('Rcon Port:'),
-        'tooltip'    => _("Enter your game server's rcon (admin) port."),
-        'default'    => '27960'
+        'title'      => _('Delay:'),
+        'tooltip'    => _('Delay between each log reading. Set a higher value to consume less disk ressources or bandwidth if you remotely connect (ftp or http remote log access)'),
+        'default'    => '0.33'
     ),
-    'rcon_password' => array (
+    'lines_per_second' => array (
         'formtype'   => 'text',
-        'title'      => _('Rcon Password:'),
-        'tooltip'    => _('Enter your server rcon password.'),
-        'default'    => 'MYrCOnPaSS'
+        'title'      => _('Lines per Second'),
+        'tooltip'    => _('Number of lines to process per second. Set a lower value to consume less CPU ressources'),
+        'default'    => '50'
     ),
     'max_line_length' => array(
         'formtype'   => 'text',
         'title'      => _('Max Line Length'),
         'tooltip'    => _('When sending in-game messages, lines will have at most this number of characters.'),
-        'default'    => '80'
+        'default'    => '65'
     ),
-);
-
-
-/*******************************************************************************
- * Messages
- *******************************************************************************/
-$messages = array (
-    'kicked_by' => array (
-        'formtype'   => 'text',
-        'title'      => _('Kicked By:'),
-        'tooltip'    => _('The message that will be displayed when a player is kicked by a mod/admin.'),
-        'default'    => '$clientname was kicked by $adminname $reason',
-        'size'       => '420px'
+    'punkbuster' => array (
+        'formtype'   => 'select',
+        'title'      => _('Punkbuster:'),
+        'tooltip'    => _('Select on if you use Punkbuster, otherwise select off.'),
+        'default'    => 'on',
+        'options'    => array (
+            'on' => 'on',
+            'off' => 'off'
+        )
     ),
-    'kicked' => array (
-        'formtype'   => 'text',
-        'title'      => _('Kicked:'),
-        'tooltip'    => _('The message that will be displayed when a player is kicked by B3.'),
-        'default'    => '$clientname was kicked $reason',
-        'size'       => '420px'
-    ),
-    'banned_by' => array (
-        'formtype'   => 'text',
-        'title'      => _('Banned By:'),
-        'tooltip'    => _('The message that will be displayed when a player is banned by a mod/admin.'),
-        'default'    => '$clientname was banned by $adminname $reason',
-        'size'       => '420px'
-    ),
-    'banned' => array (
-        'formtype'   => 'text',
-        'title'      => _('Banned:'),
-        'tooltip'    => _('The message that will be displayed when a player is kicked by a B3.'),
-        'default'    => '$clientname was banned $reason',
-        'size'       => '420px'
-    ),
-    'temp_banned_by' => array (
-        'formtype'   => 'text',
-        'title'      => _('Temp Banned By:'),
-        'tooltip'    => _('The message that will be displayed when a player is temp banned by a mod/admin.'),
-        'default'    => '$clientname was temp banned by $adminname for $banduration $reason',
-        'size'       => '420px'
-    ),
-    'temp_banned' => array (
-        'formtype'   => 'text',
-        'title'      => _('Temp Banned:'),
-        'tooltip'    => _('The message that will be displayed when a player is temp banned by B3.'),
-        'default'    => '$clientname was temp banned for $banduration $reason',
-        'size'       => '420px'
-    ),
-    'unbanned_by' => array (
-        'formtype'   => 'text',
-        'title'      => _('Unbanned By:'),
-        'tooltip'    => _('The message that will be displayed when a player is unbanned by a mod/admin.'),
-        'default'    => '$clientname was un-banned by $adminname $reason',
-        'size'       => '420px'
-    ),
-    'unbanned' => array (
-        'formtype'   => 'text',
-        'title'      => _('Unbanned:'),
-        'tooltip'    => _('The message that will be displayed when a player is unbanned by B3'),
-        'default'    => '$clientname was un-banned $reason',
-        'size'       => '420px'
+    'game_log' => array (
+        'formtype'   => 'multioption',
+        'title'      => _('Game Log File:'),
+        'tooltip'    => _('Select your game log file location.'),
+        'default'    => 'local',
+        'options'    => array (
+            'local' => array (
+                'title'   => _('Local Path'),
+                'hide'    => 10,
+                'game_log_local' => array (
+                    'title'      => _('Local Path:'),
+                    'formtype'   => 'text',
+                    'tooltip'    => _('Enter full path to your game log file.'),
+                    'default'    => '/path/to/games_mp.log'
+                )
+            ),
+            'ftp' => array (
+                'title'          => _('FTP Location'),
+                'hide'           => 11, //Unique number for hide div
+                'game_log_ftpadr' => array (
+                    'formtype'    => 'text',
+                    'title'       => _('FTP Address:'),
+                    'tooltip'     => _('Enter FTP address of your game log file including "ftp://" at the beginning.'),
+                    'default'     => 'ftp://ftp.example.com/games/games_mp.log'
+                ),
+                'game_log_ftpusr' => array (
+                    'formtype'   => 'text',
+                    'title'      => _('FTP User:'),
+                    'tooltip'    => _('Enter your ftp user name'),
+                    'default'    => 'ftpuser'
+                ),
+                'game_log_ftppas' => array (
+                    'formtype'   => 'text',
+                    'title'      => _('FTP Pass:'),
+                    'tooltip'    => _('Enter your ftp password'),
+                    'default'    => 'FtPpASSw0Rd'
+                )
+            )
+        )
     )
 );
 
@@ -190,6 +171,12 @@ $builtin_plugins = array (
         'title'      => 'Ping Watch',
         'tooltip'    => _('Notifies players with high ping.'),
         'default'    => '@conf/plugin_pingwatch.ini'
+    ),
+    'punkbuster'   => array (
+        'formtype'   => 'plugin',
+        'title'      => 'Punkbuster',
+        'tooltip'    => _('Provides Punkbuster features if enabled in server config.'),
+        'default'    => '@conf/plugin_punkbuster.ini'
     ),
     'spamcontrol'   => array (
         'formtype'   => 'plugin',

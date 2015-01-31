@@ -5,7 +5,7 @@
  * Author URI: http://www.bigbrotherbot.net
  *
  * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License, version 2, as 
+ * it under the terms of the GNU General Public License, version 2, as
  * published by the Free Software Foundation.
  *
  * This program is distributed in the hope that it will be useful,
@@ -21,9 +21,9 @@
 /**
  * This file holds an array of data for common b3 settings for all games/parsers
  */
- 
+
 /*-----------------------------------------------------------------------------*
- * HF SETTINGS
+ * ArmA II / DayZ SETTINGS
  *-----------------------------------------------------------------------------*/
 $game_name = 'ArmA II / DayZ';
 
@@ -55,10 +55,10 @@ $server = array (
         'default'    => $_SERVER['REMOTE_ADDR']
     ),
     'port' => array (
-            'formtype'   => 'text',
-            'title'      => _('Server Port:'),
-            'tooltip'    => _("Enter your game server'sport."),
-            'default'    => '2302'
+        'formtype'   => 'text',
+        'title'      => _('Server Port:'),
+        'tooltip'    => _("Enter your game server'sport."),
+        'default'    => '2302'
     ),
     'rcon_ip' => array (
         'formtype'   => 'text',
@@ -67,10 +67,16 @@ $server = array (
         'default'    => '127.0.0.1'
     ),
     'rcon_password' => array (
-            'formtype'   => 'text',
-            'title'      => _('Rcon Password:'),
-            'tooltip'    => _("Enter your rcon password. (see <i>RConPassword</i> in your game server beserver.cfg config file)"),
-            'default'    => 'MYrCOnPaSS'
+        'formtype'   => 'text',
+        'title'      => _('Rcon Password:'),
+        'tooltip'    => _("Enter your rcon password. (see <i>RConPassword</i> in your game server beserver.cfg config file)"),
+        'default'    => 'MYrCOnPaSS'
+    ),
+    'max_line_length' => array(
+        'formtype'   => 'text',
+        'title'      => _('Max Line Length'),
+        'tooltip'    => _('When sending in-game messages, lines will have at most this number of characters.'),
+        'default'    => '128'
     )
 );
 
@@ -141,49 +147,61 @@ $messages = array (
  * Built-in Plugins
  *******************************************************************************/
 $builtin_plugins = array (
-    'censor'   => array (
-        'formtype'   => 'plugin',
-        'title'      => 'Censor',
-        'tooltip'    => _('Cencors bad words and bad names'),
-        'default'    => '@conf/plugin_censor.xml'
-    ),
-    'spamcontrol'   => array (
-        'formtype'   => 'plugin',
-        'title'      => 'Spam Control',
-        'tooltip'    => _('Warns players who spams the in game chat'),
-        'default'    => '@conf/plugin_spamcontrol.xml'
-    ),
     'admin'   => array (
         'formtype'   => 'plugin',
         'title'      => 'Admin',
         'tooltip'    => _('This plugin provides main B3 functionalities.'),
-        'default'    => '@conf/plugin_admin.xml',
+        'default'    => '@conf/plugin_admin.ini',
         'checked'    => True,
-        'disabled'   => True 
-    ),
-    'stats'   => array (
-        'formtype'   => 'plugin',
-        'title'      => 'Stats',
-        'tooltip'    => _('Displays round based stats'),
-        'default'    => '@conf/plugin_stats.xml'
+        'disabled'   => True
     ),
     'adv'   => array (
         'formtype'   => 'plugin',
         'title'      => 'Advertise',
-        'tooltip'    => _('Manages your server messages'),
+        'tooltip'    => _('Manages your server messages.'),
         'default'    => '@conf/plugin_adv.xml'
+    ),
+    'censor'   => array (
+        'formtype'   => 'plugin',
+        'title'      => 'Censor',
+        'tooltip'    => _('Censor bad words and bad names.'),
+        'default'    => '@conf/plugin_censor.xml'
+    ),
+    'cmdmanager'   => array (
+        'formtype'   => 'plugin',
+        'title'      => 'Commands Manager',
+        'tooltip'    => _('Allows to modify command levels and aliases in-game.'),
+        'default'    => '@conf/plugin_cmdmanager.ini'
+    ),
+    'spamcontrol'   => array (
+        'formtype'   => 'plugin',
+        'title'      => 'Spam Control',
+        'tooltip'    => _('Warns players who spams the in game chat.'),
+        'default'    => '@conf/plugin_spamcontrol.ini'
+    ),
+    'stats'   => array (
+        'formtype'   => 'plugin',
+        'title'      => 'Stats',
+        'tooltip'    => _('Displays round based stats.'),
+        'default'    => '@conf/plugin_stats.ini'
     ),
     'status'   => array (
         'formtype'   => 'plugin',
         'title'      => 'Status',
         'tooltip'    => _('Writes server status to an xml file. This can be used by 3rd party tools to monitor server status.'),
-        'default'    => '@conf/plugin_status.xml'
+        'default'    => '@conf/plugin_status.ini'
+    ),
+    'tk'   => array (
+        'formtype'   => 'plugin',
+        'title'      => 'Team Kill',
+        'tooltip'    => _('Punishes team killers'),
+        'default'    => '@conf/plugin_tk.ini'
     ),
     'welcome'   => array (
         'formtype'   => 'plugin',
         'title'      => 'Welcome',
         'tooltip'    => _('Welcomes players'),
-        'default'    => '@conf/plugin_welcome.xml'
+        'default'    => '@conf/plugin_welcome.ini'
     )
 );
 
@@ -216,7 +234,7 @@ $external_plugins = array (
         'formtype'   => 'plugin',
         'title'      => 'XLRstats',
         'tooltip'    => 'Records all player stats in your database.',
-        'default'    => '@b3/extplugins/conf/xlrstats.xml',
+        'default'    => '@b3/extplugins/conf/plugin_xlrstats.ini',
         'url'        => 'http://www.xlrstats.com'
     )
 );

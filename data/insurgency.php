@@ -1,7 +1,7 @@
 <?php
 /**
  * BigBrotherBot Config File Generator
- * Author: Courgette <courgette@bigbrotherbot.net>
+ * Author: Freelander (Özgür Uysal) <freelander@bigbrotherbot.net>
  * Author URI: http://www.bigbrotherbot.net
  *
  * This program is free software; you can redistribute it and/or modify
@@ -23,15 +23,14 @@
  */
 
 /*-----------------------------------------------------------------------------*
- * CHIV SETTINGS
+ * INSURGENCY SETTINGS
  *-----------------------------------------------------------------------------*/
-$game_name = 'Chivalry Medieval Warfare';
+$game_name = 'Insurgency';
 
 /*******************************************************************************
  * Game Specific Settings
  *******************************************************************************/
 $game_specific_settings = False;
-
 
 /*******************************************************************************
  * B3 Settings
@@ -39,10 +38,9 @@ $game_specific_settings = False;
 $b3['bot_prefix'] = array (
     'formtype'   => 'text',
     'title'      => _('Bot Prefix:'),
-    'tooltip'    => _('Ingame messages are prefixed with this code, you can use colorcodes.'),
+    'tooltip'    => _('Ingame messages are prefixed with this code.'),
     'default'    => "B3:"
 );
-
 
 /*******************************************************************************
  * Server Settings
@@ -52,12 +50,12 @@ $server = array (
         'formtype'   => 'text',
         'title'      => _('Public IP:'),
         'tooltip'    => _('Enter your game server\'s public IP.'),
-        'default'    => $_SERVER['REMOTE_ADDR']
+        'default'    => '255.255.255.255'
     ),
     'port' => array (
         'formtype'   => 'text',
-        'title'      => _('Server Query Port:'),
-        'tooltip'    => _('Enter your game server\'s query port.'),
+        'title'      => _('Server Port:'),
+        'tooltip'    => _('Enter your game server\'s rcon (admin) port.'),
         'default'    => '27015'
     ),
     'rcon_ip' => array (
@@ -66,24 +64,36 @@ $server = array (
         'tooltip'    => _('Enter your game server\'s rcon IP.'),
         'default'    => '127.0.0.1'
     ),
-    'rcon_port' => array (
-        'formtype'   => 'text',
-        'title'      => _('Rcon Port:'),
-        'tooltip'    => _("Enter your game server's rcon (admin) port."),
-        'default'    => '27960'
-    ),
     'rcon_password' => array (
         'formtype'   => 'text',
         'title'      => _('Rcon Password:'),
-        'tooltip'    => _('Enter your server rcon password.'),
+        'tooltip'    => _('Enter your rcon password.'),
         'default'    => 'MYrCOnPaSS'
+    ),
+    'game_log' => array (
+        'formtype'   => 'text',
+        'title'      => _('Game Log URL:'),
+        'tooltip'    => _('Enter your game log URL.'),
+        'default'    => '',
+    ),
+    'delay' => array (
+        'formtype'   => 'text',
+        'title'      => _('Delay:'),
+        'tooltip'    => _('Delay between each log reading. Set a higher value to consume less disk ressources or bandwidth if you remotely connect (ftp or http remote log access)'),
+        'default'    => '0.33'
+    ),
+    'lines_per_second' => array (
+        'formtype'   => 'text',
+        'title'      => _('Lines per Second'),
+        'tooltip'    => _('Number of lines to process per second. Set a lower value to consume less CPU ressources'),
+        'default'    => '50'
     ),
     'max_line_length' => array(
         'formtype'   => 'text',
         'title'      => _('Max Line Length'),
         'tooltip'    => _('When sending in-game messages, lines will have at most this number of characters.'),
-        'default'    => '80'
-    ),
+        'default'    => '200'
+    )
 );
 
 
@@ -148,6 +158,7 @@ $messages = array (
         'size'       => '420px'
     )
 );
+
 
 /*******************************************************************************
  * Built-in Plugins
